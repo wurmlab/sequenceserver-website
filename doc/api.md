@@ -1,6 +1,6 @@
 ---
 --- 
-## Sequence Server API
+## SequenceServer API
 
 This document describes how to access SequenceServer functionality 
 programmatically using the command line.
