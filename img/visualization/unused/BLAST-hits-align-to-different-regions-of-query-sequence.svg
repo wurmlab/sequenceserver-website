@@ -1,0 +1,535 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="847" height="150" data-name="Alignment-Overview-sp|Q9VKN7|AURKB_DROME" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style class="exported-css" type="text/css">
+.collapsing, .dropdown-menu .divider, .nav .nav-divider, .sr-only, svg:not(:root) { overflow: hidden; }
+.kablammo.svg-container, .length-distribution.svg-container { height: 150px; }
+svg text { font-family: "Source sans pro", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 10px; }
+.axis line, svg .axis path { fill: none; stroke: rgb(0, 0, 0); shape-rendering: crispedges; }
+.alignment-overview.svg-container { text-align: center; }
+svg .bar:hover { fill: rgb(255, 69, 0); }
+svg .RdYlBu .q0-2 { fill: rgb(252, 141, 89); }
+svg .RdYlBu .q1-2 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q0-3 { fill: rgb(252, 141, 89); }
+svg .RdYlBu .q1-3 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q2-3 { fill: rgb(145, 191, 219); }
+svg .RdYlBu .q0-4 { fill: rgb(215, 25, 28); }
+svg .RdYlBu .q1-4 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q2-4 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q3-4 { fill: rgb(44, 123, 182); }
+svg .RdYlBu .q0-5 { fill: rgb(215, 25, 28); }
+svg .RdYlBu .q1-5 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q2-5 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q3-5 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q4-5 { fill: rgb(44, 123, 182); }
+svg .RdYlBu .q0-6 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q1-6 { fill: rgb(252, 141, 89); }
+svg .RdYlBu .q2-6 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q3-6 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q4-6 { fill: rgb(145, 191, 219); }
+svg .RdYlBu .q5-6 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q0-7 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q1-7 { fill: rgb(252, 141, 89); }
+svg .RdYlBu .q2-7 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q3-7 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q4-7 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q5-7 { fill: rgb(145, 191, 219); }
+svg .RdYlBu .q6-7 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q0-8 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q1-8 { fill: rgb(244, 109, 67); }
+svg .RdYlBu .q2-8 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q3-8 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q4-8 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q5-8 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q6-8 { fill: rgb(116, 173, 209); }
+svg .RdYlBu .q7-8 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q0-9 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q1-9 { fill: rgb(244, 109, 67); }
+svg .RdYlBu .q2-9 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q3-9 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q4-9 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q5-9 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q6-9 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q7-9 { fill: rgb(116, 173, 209); }
+svg .RdYlBu .q8-9 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q0-10 { fill: rgb(165, 0, 38); }
+svg .RdYlBu .q1-10 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q2-10 { fill: rgb(244, 109, 67); }
+svg .RdYlBu .q3-10 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q4-10 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q5-10 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q6-10 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q7-10 { fill: rgb(116, 173, 209); }
+svg .RdYlBu .q8-10 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q9-10 { fill: rgb(49, 54, 149); }
+svg .RdYlBu .q0-11 { fill: rgb(165, 0, 38); }
+svg .RdYlBu .q1-11 { fill: rgb(215, 48, 39); }
+svg .RdYlBu .q2-11 { fill: rgb(244, 109, 67); }
+svg .RdYlBu .q3-11 { fill: rgb(253, 174, 97); }
+svg .RdYlBu .q4-11 { fill: rgb(254, 224, 144); }
+svg .RdYlBu .q5-11 { fill: rgb(255, 255, 191); }
+svg .RdYlBu .q6-11 { fill: rgb(224, 243, 248); }
+svg .RdYlBu .q7-11 { fill: rgb(171, 217, 233); }
+svg .RdYlBu .q8-11 { fill: rgb(116, 173, 209); }
+svg .RdYlBu .q9-11 { fill: rgb(69, 117, 180); }
+svg .RdYlBu .q10-11 { fill: rgb(49, 54, 149); }
+svg { --a: #D50000; --b: #B71C1C; --c: #C62828; --d: #D32F2F; --e: #E53935; --f: #F44336; --g: #FF1744; --h: #EF5350; --i: #FF5252; --j: #E65100; --k: #EF6C00; --l: #FFC107; --m: #FBC02D; --n: #FFD600; --o: #FDD835; --p: #FFFF00; --q: #FFEB3B; --r: #FFEA00; --s: #FFEE58; --t: #FFF178; --u: #FFF59D; --v: #FFF9C4; --w: #81D4FA; --x: #4FC3F7; --y: #64B5F6; --z: #42A5F5; --aa: #2196F3; --ab: #3949AB; --ac: #3040AF; --ad: #303F9F; --ae: #0D47A1; --af: #1A237E; }
+svg .RdYlBu .q0-12 { fill: var(--a); }
+svg .RdYlBu .q1-12 { fill: var(--b); }
+svg .RdYlBu .q2-12 { fill: var(--e); }
+svg .RdYlBu .q3-12 { fill: var(--j); }
+svg .RdYlBu .q4-12 { fill: var(--l); }
+svg .RdYlBu .q5-12 { fill: var(--p); }
+svg .RdYlBu .q6-12 { fill: var(--r); }
+svg .RdYlBu .q7-12 { fill: var(--v); }
+svg .RdYlBu .q8-12 { fill: var(--w); }
+svg .RdYlBu .q9-12 { fill: var(--aa); }
+svg .RdYlBu .q10-12 { fill: var(--ae); }
+svg .RdYlBu .q11-12 { fill: var(--af); }
+svg .RdYlBu .q0-13 { fill: var(--a); }
+svg .RdYlBu .q1-13 { fill: var(--b); }
+svg .RdYlBu .q2-13 { fill: var(--e); }
+svg .RdYlBu .q3-13 { fill: var(--j); }
+svg .RdYlBu .q4-13 { fill: var(--l); }
+svg .RdYlBu .q5-13 { fill: var(--n); }
+svg .RdYlBu .q6-13 { fill: var(--r); }
+svg .RdYlBu .q7-13 { fill: var(--s); }
+svg .RdYlBu .q8-13 { fill: var(--v); }
+svg .RdYlBu .q9-13 { fill: var(--w); }
+svg .RdYlBu .q10-13 { fill: var(--aa); }
+svg .RdYlBu .q11-13 { fill: var(--ae); }
+svg .RdYlBu .q12-13 { fill: var(--af); }
+svg .RdYlBu .q0-14 { fill: var(--a); }
+svg .RdYlBu .q1-14 { fill: var(--b); }
+svg .RdYlBu .q2-14 { fill: var(--e); }
+svg .RdYlBu .q3-14 { fill: var(--j); }
+svg .RdYlBu .q4-14 { fill: var(--l); }
+svg .RdYlBu .q5-14 { fill: var(--n); }
+svg .RdYlBu .q6-14 { fill: var(--p); }
+svg .RdYlBu .q7-14 { fill: var(--r); }
+svg .RdYlBu .q8-14 { fill: var(--s); }
+svg .RdYlBu .q9-14 { fill: var(--v); }
+svg .RdYlBu .q10-14 { fill: var(--w); }
+svg .RdYlBu .q11-14 { fill: var(--aa); }
+svg .RdYlBu .q12-14 { fill: var(--ae); }
+svg .RdYlBu .q13-14 { fill: var(--af); }
+svg .RdYlBu .q0-15 { fill: var(--a); }
+svg .RdYlBu .q1-15 { fill: var(--b); }
+svg .RdYlBu .q2-15 { fill: var(--c); }
+svg .RdYlBu .q3-15 { fill: var(--e); }
+svg .RdYlBu .q4-15 { fill: var(--j); }
+svg .RdYlBu .q5-15 { fill: var(--l); }
+svg .RdYlBu .q6-15 { fill: var(--n); }
+svg .RdYlBu .q7-15 { fill: var(--r); }
+svg .RdYlBu .q8-15 { fill: var(--s); }
+svg .RdYlBu .q9-15 { fill: var(--v); }
+svg .RdYlBu .q10-15 { fill: var(--w); }
+svg .RdYlBu .q11-15 { fill: var(--x); }
+svg .RdYlBu .q12-15 { fill: var(--aa); }
+svg .RdYlBu .q13-15 { fill: var(--ae); }
+svg .RdYlBu .q14-15 { fill: var(--af); }
+svg .RdYlBu .q0-16 { fill: var(--a); }
+svg .RdYlBu .q1-16 { fill: var(--b); }
+svg .RdYlBu .q2-16 { fill: var(--c); }
+svg .RdYlBu .q3-16 { fill: var(--e); }
+svg .RdYlBu .q4-16 { fill: var(--j); }
+svg .RdYlBu .q5-16 { fill: var(--l); }
+svg .RdYlBu .q6-16 { fill: var(--n); }
+svg .RdYlBu .q7-16 { fill: var(--p); }
+svg .RdYlBu .q8-16 { fill: var(--r); }
+svg .RdYlBu .q9-16 { fill: var(--s); }
+svg .RdYlBu .q10-16 { fill: var(--v); }
+svg .RdYlBu .q11-16 { fill: var(--w); }
+svg .RdYlBu .q12-16 { fill: var(--x); }
+svg .RdYlBu .q13-16 { fill: var(--aa); }
+svg .RdYlBu .q14-16 { fill: var(--ae); }
+svg .RdYlBu .q15-16 { fill: var(--af); }
+svg .RdYlBu .q0-17 { fill: var(--a); }
+svg .RdYlBu .q1-17 { fill: var(--b); }
+svg .RdYlBu .q2-17 { fill: var(--c); }
+svg .RdYlBu .q3-17 { fill: var(--e); }
+svg .RdYlBu .q4-17 { fill: var(--i); }
+svg .RdYlBu .q5-17 { fill: var(--j); }
+svg .RdYlBu .q6-17 { fill: var(--l); }
+svg .RdYlBu .q7-17 { fill: var(--n); }
+svg .RdYlBu .q8-17 { fill: var(--r); }
+svg .RdYlBu .q9-17 { fill: var(--s); }
+svg .RdYlBu .q10-17 { fill: var(--v); }
+svg .RdYlBu .q11-17 { fill: var(--w); }
+svg .RdYlBu .q12-17 { fill: var(--x); }
+svg .RdYlBu .q13-17 { fill: var(--y); }
+svg .RdYlBu .q14-17 { fill: var(--aa); }
+svg .RdYlBu .q15-17 { fill: var(--ae); }
+svg .RdYlBu .q16-17 { fill: var(--af); }
+svg .RdYlBu .q0-18 { fill: var(--a); }
+svg .RdYlBu .q1-18 { fill: var(--b); }
+svg .RdYlBu .q2-18 { fill: var(--c); }
+svg .RdYlBu .q3-18 { fill: var(--e); }
+svg .RdYlBu .q4-18 { fill: var(--i); }
+svg .RdYlBu .q5-18 { fill: var(--j); }
+svg .RdYlBu .q6-18 { fill: var(--l); }
+svg .RdYlBu .q7-18 { fill: var(--n); }
+svg .RdYlBu .q8-18 { fill: var(--p); }
+svg .RdYlBu .q9-18 { fill: var(--r); }
+svg .RdYlBu .q10-18 { fill: var(--s); }
+svg .RdYlBu .q11-18 { fill: var(--v); }
+svg .RdYlBu .q12-18 { fill: var(--w); }
+svg .RdYlBu .q13-18 { fill: var(--x); }
+svg .RdYlBu .q14-18 { fill: var(--y); }
+svg .RdYlBu .q15-18 { fill: var(--aa); }
+svg .RdYlBu .q16-18 { fill: var(--ae); }
+svg .RdYlBu .q17-18 { fill: var(--af); }
+svg .RdYlBu .q0-19 { fill: var(--a); }
+svg .RdYlBu .q1-19 { fill: var(--b); }
+svg .RdYlBu .q2-19 { fill: var(--c); }
+svg .RdYlBu .q3-19 { fill: var(--e); }
+svg .RdYlBu .q4-19 { fill: var(--i); }
+svg .RdYlBu .q5-19 { fill: var(--j); }
+svg .RdYlBu .q6-19 { fill: var(--k); }
+svg .RdYlBu .q7-19 { fill: var(--l); }
+svg .RdYlBu .q8-19 { fill: var(--n); }
+svg .RdYlBu .q9-19 { fill: var(--r); }
+svg .RdYlBu .q10-19 { fill: var(--s); }
+svg .RdYlBu .q11-19 { fill: var(--u); }
+svg .RdYlBu .q12-19 { fill: var(--v); }
+svg .RdYlBu .q13-19 { fill: var(--w); }
+svg .RdYlBu .q14-19 { fill: var(--x); }
+svg .RdYlBu .q15-19 { fill: var(--y); }
+svg .RdYlBu .q16-19 { fill: var(--aa); }
+svg .RdYlBu .q17-19 { fill: var(--ae); }
+svg .RdYlBu .q18-19 { fill: var(--af); }
+svg .RdYlBu .q0-20 { fill: var(--a); }
+svg .RdYlBu .q1-20 { fill: var(--b); }
+svg .RdYlBu .q2-20 { fill: var(--c); }
+svg .RdYlBu .q3-20 { fill: var(--e); }
+svg .RdYlBu .q4-20 { fill: var(--i); }
+svg .RdYlBu .q5-20 { fill: var(--j); }
+svg .RdYlBu .q6-20 { fill: var(--k); }
+svg .RdYlBu .q7-20 { fill: var(--l); }
+svg .RdYlBu .q8-20 { fill: var(--n); }
+svg .RdYlBu .q9-20 { fill: var(--p); }
+svg .RdYlBu .q10-20 { fill: var(--r); }
+svg .RdYlBu .q11-20 { fill: var(--s); }
+svg .RdYlBu .q12-20 { fill: var(--u); }
+svg .RdYlBu .q13-20 { fill: var(--v); }
+svg .RdYlBu .q14-20 { fill: var(--w); }
+svg .RdYlBu .q15-20 { fill: var(--x); }
+svg .RdYlBu .q16-20 { fill: var(--y); }
+svg .RdYlBu .q17-20 { fill: var(--aa); }
+svg .RdYlBu .q18-20 { fill: var(--ae); }
+svg .RdYlBu .q19-20 { fill: var(--af); }
+svg .RdYlBu .q0-21 { fill: var(--a); }
+svg .RdYlBu .q1-21 { fill: var(--b); }
+svg .RdYlBu .q2-21 { fill: var(--c); }
+svg .RdYlBu .q3-21 { fill: var(--e); }
+svg .RdYlBu .q4-21 { fill: var(--i); }
+svg .RdYlBu .q5-21 { fill: var(--j); }
+svg .RdYlBu .q6-21 { fill: var(--k); }
+svg .RdYlBu .q7-21 { fill: var(--l); }
+svg .RdYlBu .q8-21 { fill: var(--n); }
+svg .RdYlBu .q9-21 { fill: var(--o); }
+svg .RdYlBu .q10-21 { fill: var(--q); }
+svg .RdYlBu .q11-21 { fill: var(--r); }
+svg .RdYlBu .q12-21 { fill: var(--s); }
+svg .RdYlBu .q13-21 { fill: var(--u); }
+svg .RdYlBu .q14-21 { fill: var(--v); }
+svg .RdYlBu .q15-21 { fill: var(--w); }
+svg .RdYlBu .q16-21 { fill: var(--x); }
+svg .RdYlBu .q17-21 { fill: var(--y); }
+svg .RdYlBu .q18-21 { fill: var(--aa); }
+svg .RdYlBu .q19-21 { fill: var(--ae); }
+svg .RdYlBu .q20-21 { fill: var(--af); }
+svg .RdYlBu .q0-22 { fill: var(--a); }
+svg .RdYlBu .q1-22 { fill: var(--b); }
+svg .RdYlBu .q2-22 { fill: var(--c); }
+svg .RdYlBu .q3-22 { fill: var(--e); }
+svg .RdYlBu .q4-22 { fill: var(--i); }
+svg .RdYlBu .q5-22 { fill: var(--j); }
+svg .RdYlBu .q6-22 { fill: var(--k); }
+svg .RdYlBu .q7-22 { fill: var(--l); }
+svg .RdYlBu .q8-22 { fill: var(--n); }
+svg .RdYlBu .q9-22 { fill: var(--o); }
+svg .RdYlBu .q10-22 { fill: var(--p); }
+svg .RdYlBu .q11-22 { fill: var(--q); }
+svg .RdYlBu .q12-22 { fill: var(--r); }
+svg .RdYlBu .q13-22 { fill: var(--s); }
+svg .RdYlBu .q14-22 { fill: var(--u); }
+svg .RdYlBu .q15-22 { fill: var(--v); }
+svg .RdYlBu .q16-22 { fill: var(--w); }
+svg .RdYlBu .q17-22 { fill: var(--x); }
+svg .RdYlBu .q18-22 { fill: var(--y); }
+svg .RdYlBu .q19-22 { fill: var(--aa); }
+svg .RdYlBu .q20-22 { fill: var(--ae); }
+svg .RdYlBu .q21-22 { fill: var(--af); }
+svg .RdYlBu .q0-23 { fill: var(--a); }
+svg .RdYlBu .q1-23 { fill: var(--b); }
+svg .RdYlBu .q2-23 { fill: var(--c); }
+svg .RdYlBu .q3-23 { fill: var(--e); }
+svg .RdYlBu .q4-23 { fill: var(--i); }
+svg .RdYlBu .q5-23 { fill: var(--j); }
+svg .RdYlBu .q6-23 { fill: var(--k); }
+svg .RdYlBu .q7-23 { fill: var(--l); }
+svg .RdYlBu .q8-23 { fill: var(--m); }
+svg .RdYlBu .q9-23 { fill: var(--n); }
+svg .RdYlBu .q10-23 { fill: var(--o); }
+svg .RdYlBu .q11-23 { fill: var(--q); }
+svg .RdYlBu .q12-23 { fill: var(--r); }
+svg .RdYlBu .q13-23 { fill: var(--s); }
+svg .RdYlBu .q14-23 { fill: var(--t); }
+svg .RdYlBu .q15-23 { fill: var(--u); }
+svg .RdYlBu .q16-23 { fill: var(--v); }
+svg .RdYlBu .q17-23 { fill: var(--w); }
+svg .RdYlBu .q18-23 { fill: var(--x); }
+svg .RdYlBu .q19-23 { fill: var(--y); }
+svg .RdYlBu .q20-23 { fill: var(--aa); }
+svg .RdYlBu .q21-23 { fill: var(--ae); }
+svg .RdYlBu .q22-23 { fill: var(--af); }
+svg .RdYlBu .q0-24 { fill: var(--a); }
+svg .RdYlBu .q1-24 { fill: var(--b); }
+svg .RdYlBu .q2-24 { fill: var(--c); }
+svg .RdYlBu .q3-24 { fill: var(--e); }
+svg .RdYlBu .q4-24 { fill: var(--i); }
+svg .RdYlBu .q5-24 { fill: var(--j); }
+svg .RdYlBu .q6-24 { fill: var(--k); }
+svg .RdYlBu .q7-24 { fill: var(--l); }
+svg .RdYlBu .q8-24 { fill: var(--m); }
+svg .RdYlBu .q9-24 { fill: var(--n); }
+svg .RdYlBu .q10-24 { fill: var(--o); }
+svg .RdYlBu .q11-24 { fill: var(--p); }
+svg .RdYlBu .q12-24 { fill: var(--q); }
+svg .RdYlBu .q13-24 { fill: var(--r); }
+svg .RdYlBu .q14-24 { fill: var(--s); }
+svg .RdYlBu .q15-24 { fill: var(--t); }
+svg .RdYlBu .q16-24 { fill: var(--u); }
+svg .RdYlBu .q17-24 { fill: var(--v); }
+svg .RdYlBu .q18-24 { fill: var(--w); }
+svg .RdYlBu .q19-24 { fill: var(--x); }
+svg .RdYlBu .q20-24 { fill: var(--y); }
+svg .RdYlBu .q21-24 { fill: var(--aa); }
+svg .RdYlBu .q22-24 { fill: var(--ae); }
+svg .RdYlBu .q23-24 { fill: var(--af); }
+svg .RdYlBu .q0-25 { fill: var(--a); }
+svg .RdYlBu .q1-25 { fill: var(--b); }
+svg .RdYlBu .q2-25 { fill: var(--c); }
+svg .RdYlBu .q3-25 { fill: var(--e); }
+svg .RdYlBu .q4-25 { fill: var(--h); }
+svg .RdYlBu .q5-25 { fill: var(--i); }
+svg .RdYlBu .q6-25 { fill: var(--j); }
+svg .RdYlBu .q7-25 { fill: var(--k); }
+svg .RdYlBu .q8-25 { fill: var(--l); }
+svg .RdYlBu .q9-25 { fill: var(--m); }
+svg .RdYlBu .q10-25 { fill: var(--n); }
+svg .RdYlBu .q11-25 { fill: var(--o); }
+svg .RdYlBu .q12-25 { fill: var(--q); }
+svg .RdYlBu .q13-25 { fill: var(--r); }
+svg .RdYlBu .q14-25 { fill: var(--s); }
+svg .RdYlBu .q15-25 { fill: var(--t); }
+svg .RdYlBu .q16-25 { fill: var(--u); }
+svg .RdYlBu .q17-25 { fill: var(--v); }
+svg .RdYlBu .q18-25 { fill: var(--w); }
+svg .RdYlBu .q19-25 { fill: var(--x); }
+svg .RdYlBu .q20-25 { fill: var(--y); }
+svg .RdYlBu .q21-25 { fill: var(--z); }
+svg .RdYlBu .q22-25 { fill: var(--aa); }
+svg .RdYlBu .q23-25 { fill: var(--ae); }
+svg .RdYlBu .q24-25 { fill: var(--af); }
+svg .RdYlBu .q0-26 { fill: var(--a); }
+svg .RdYlBu .q1-26 { fill: var(--b); }
+svg .RdYlBu .q2-26 { fill: var(--c); }
+svg .RdYlBu .q4-26 { fill: var(--e); }
+svg .RdYlBu .q5-26 { fill: var(--h); }
+svg .RdYlBu .q6-26 { fill: var(--i); }
+svg .RdYlBu .q7-26 { fill: var(--j); }
+svg .RdYlBu .q8-26 { fill: var(--k); }
+svg .RdYlBu .q9-26 { fill: var(--l); }
+svg .RdYlBu .q10-26 { fill: var(--m); }
+svg .RdYlBu .q11-26 { fill: var(--n); }
+svg .RdYlBu .q12-26 { fill: var(--o); }
+svg .RdYlBu .q13-26 { fill: var(--p); }
+svg .RdYlBu .q14-26 { fill: var(--q); }
+svg .RdYlBu .q15-26 { fill: var(--r); }
+svg .RdYlBu .q16-26 { fill: var(--s); }
+svg .RdYlBu .q17-26 { fill: var(--t); }
+svg .RdYlBu .q18-26 { fill: var(--u); }
+svg .RdYlBu .q19-26 { fill: var(--v); }
+svg .RdYlBu .q20-26 { fill: var(--w); }
+svg .RdYlBu .q21-26 { fill: var(--x); }
+svg .RdYlBu .q22-26 { fill: var(--y); }
+svg .RdYlBu .q23-26 { fill: var(--z); }
+svg .RdYlBu .q24-26 { fill: var(--aa); }
+svg .RdYlBu .q26-26 { fill: var(--ae); }
+svg .RdYlBu .q27-26 { fill: var(--af); }
+svg .RdYlBu .q0-27 { fill: var(--a); }
+svg .RdYlBu .q1-27 { fill: var(--b); }
+svg .RdYlBu .q2-27 { fill: var(--c); }
+svg .RdYlBu .q3-27 { fill: var(--d); }
+svg .RdYlBu .q4-27 { fill: var(--e); }
+svg .RdYlBu .q5-27 { fill: var(--h); }
+svg .RdYlBu .q6-27 { fill: var(--i); }
+svg .RdYlBu .q7-27 { fill: var(--j); }
+svg .RdYlBu .q8-27 { fill: var(--k); }
+svg .RdYlBu .q9-27 { fill: var(--l); }
+svg .RdYlBu .q10-27 { fill: var(--m); }
+svg .RdYlBu .q11-27 { fill: var(--n); }
+svg .RdYlBu .q12-27 { fill: var(--o); }
+svg .RdYlBu .q14-27 { fill: var(--q); }
+svg .RdYlBu .q15-27 { fill: var(--r); }
+svg .RdYlBu .q16-27 { fill: var(--s); }
+svg .RdYlBu .q17-27 { fill: var(--t); }
+svg .RdYlBu .q18-27 { fill: var(--u); }
+svg .RdYlBu .q19-27 { fill: var(--v); }
+svg .RdYlBu .q20-27 { fill: var(--w); }
+svg .RdYlBu .q21-27 { fill: var(--x); }
+svg .RdYlBu .q22-27 { fill: var(--y); }
+svg .RdYlBu .q23-27 { fill: var(--z); }
+svg .RdYlBu .q24-27 { fill: var(--aa); }
+svg .RdYlBu .q25-27 { fill: var(--ab); }
+svg .RdYlBu .q26-27 { fill: var(--ae); }
+svg .RdYlBu .q27-27 { fill: var(--af); }
+svg .RdYlBu .q0-28 { fill: var(--a); }
+svg .RdYlBu .q1-28 { fill: var(--b); }
+svg .RdYlBu .q2-28 { fill: var(--c); }
+svg .RdYlBu .q3-28 { fill: var(--d); }
+svg .RdYlBu .q4-28 { fill: var(--e); }
+svg .RdYlBu .q5-28 { fill: var(--h); }
+svg .RdYlBu .q6-28 { fill: var(--i); }
+svg .RdYlBu .q7-28 { fill: var(--j); }
+svg .RdYlBu .q8-28 { fill: var(--k); }
+svg .RdYlBu .q9-28 { fill: var(--l); }
+svg .RdYlBu .q10-28 { fill: var(--m); }
+svg .RdYlBu .q11-28 { fill: var(--n); }
+svg .RdYlBu .q12-28 { fill: var(--o); }
+svg .RdYlBu .q13-28 { fill: var(--p); }
+svg .RdYlBu .q14-28 { fill: var(--q); }
+svg .RdYlBu .q15-28 { fill: var(--r); }
+svg .RdYlBu .q16-28 { fill: var(--s); }
+svg .RdYlBu .q17-28 { fill: var(--t); }
+svg .RdYlBu .q18-28 { fill: var(--u); }
+svg .RdYlBu .q19-28 { fill: var(--v); }
+svg .RdYlBu .q20-28 { fill: var(--w); }
+svg .RdYlBu .q21-28 { fill: var(--x); }
+svg .RdYlBu .q22-28 { fill: var(--y); }
+svg .RdYlBu .q23-28 { fill: var(--z); }
+svg .RdYlBu .q24-28 { fill: var(--aa); }
+svg .RdYlBu .q25-28 { fill: var(--ab); }
+svg .RdYlBu .q26-28 { fill: var(--ae); }
+svg .RdYlBu .q27-28 { fill: var(--af); }
+svg .RdYlBu .q0-29 { fill: var(--a); }
+svg .RdYlBu .q1-29 { fill: var(--b); }
+svg .RdYlBu .q2-29 { fill: var(--c); }
+svg .RdYlBu .q3-29 { fill: var(--d); }
+svg .RdYlBu .q4-29 { fill: var(--e); }
+svg .RdYlBu .q5-29 { fill: var(--f); }
+svg .RdYlBu .q6-29 { fill: var(--h); }
+svg .RdYlBu .q7-29 { fill: var(--i); }
+svg .RdYlBu .q8-29 { fill: var(--j); }
+svg .RdYlBu .q9-29 { fill: var(--k); }
+svg .RdYlBu .q10-29 { fill: var(--l); }
+svg .RdYlBu .q11-29 { fill: var(--m); }
+svg .RdYlBu .q12-29 { fill: var(--n); }
+svg .RdYlBu .q13-29 { fill: var(--o); }
+svg .RdYlBu .q14-29 { fill: var(--q); }
+svg .RdYlBu .q15-29 { fill: var(--r); }
+svg .RdYlBu .q16-29 { fill: var(--s); }
+svg .RdYlBu .q17-29 { fill: var(--t); }
+svg .RdYlBu .q18-29 { fill: var(--u); }
+svg .RdYlBu .q19-29 { fill: var(--v); }
+svg .RdYlBu .q20-29 { fill: var(--w); }
+svg .RdYlBu .q21-29 { fill: var(--x); }
+svg .RdYlBu .q22-29 { fill: var(--y); }
+svg .RdYlBu .q23-29 { fill: var(--z); }
+svg .RdYlBu .q24-29 { fill: var(--aa); }
+svg .RdYlBu .q25-29 { fill: var(--ab); }
+svg .RdYlBu .q26-29 { fill: var(--ad); }
+svg .RdYlBu .q27-29 { fill: var(--ae); }
+svg .RdYlBu .q28-29 { fill: var(--af); }
+svg .RdYlBu .q0-30 { fill: var(--a); }
+svg .RdYlBu .q1-30 { fill: var(--b); }
+svg .RdYlBu .q2-30 { fill: var(--c); }
+svg .RdYlBu .q3-30 { fill: var(--d); }
+svg .RdYlBu .q4-30 { fill: var(--e); }
+svg .RdYlBu .q5-30 { fill: var(--f); }
+svg .RdYlBu .q6-30 { fill: var(--h); }
+svg .RdYlBu .q7-30 { fill: var(--i); }
+svg .RdYlBu .q8-30 { fill: var(--j); }
+svg .RdYlBu .q9-30 { fill: var(--k); }
+svg .RdYlBu .q10-30 { fill: var(--l); }
+svg .RdYlBu .q11-30 { fill: var(--m); }
+svg .RdYlBu .q12-30 { fill: var(--n); }
+svg .RdYlBu .q13-30 { fill: var(--o); }
+svg .RdYlBu .q14-30 { fill: var(--p); }
+svg .RdYlBu .q15-30 { fill: var(--q); }
+svg .RdYlBu .q16-30 { fill: var(--r); }
+svg .RdYlBu .q17-30 { fill: var(--s); }
+svg .RdYlBu .q18-30 { fill: var(--t); }
+svg .RdYlBu .q19-30 { fill: var(--u); }
+svg .RdYlBu .q20-30 { fill: var(--v); }
+svg .RdYlBu .q21-30 { fill: var(--w); }
+svg .RdYlBu .q22-30 { fill: var(--x); }
+svg .RdYlBu .q23-30 { fill: var(--y); }
+svg .RdYlBu .q24-30 { fill: var(--z); }
+svg .RdYlBu .q25-30 { fill: var(--aa); }
+svg .RdYlBu .q26-30 { fill: var(--ab); }
+svg .RdYlBu .q27-30 { fill: var(--ad); }
+svg .RdYlBu .q28-30 { fill: var(--ae); }
+svg .RdYlBu .q29-30 { fill: var(--af); }
+svg .RdYlBu .q0-31 { fill: var(--a); }
+svg .RdYlBu .q1-31 { fill: var(--b); }
+svg .RdYlBu .q2-31 { fill: var(--c); }
+svg .RdYlBu .q3-31 { fill: var(--d); }
+svg .RdYlBu .q4-31 { fill: var(--e); }
+svg .RdYlBu .q5-31 { fill: var(--f); }
+svg .RdYlBu .q6-31 { fill: var(--g); }
+svg .RdYlBu .q7-31 { fill: var(--h); }
+svg .RdYlBu .q8-31 { fill: var(--i); }
+svg .RdYlBu .q9-31 { fill: var(--j); }
+svg .RdYlBu .q10-31 { fill: var(--k); }
+svg .RdYlBu .q11-31 { fill: var(--l); }
+svg .RdYlBu .q12-31 { fill: var(--m); }
+svg .RdYlBu .q13-31 { fill: var(--n); }
+svg .RdYlBu .q14-31 { fill: var(--o); }
+svg .RdYlBu .q15-31 { fill: var(--q); }
+svg .RdYlBu .q16-31 { fill: var(--r); }
+svg .RdYlBu .q17-31 { fill: var(--s); }
+svg .RdYlBu .q18-31 { fill: var(--t); }
+svg .RdYlBu .q19-31 { fill: var(--u); }
+svg .RdYlBu .q20-31 { fill: var(--v); }
+svg .RdYlBu .q21-31 { fill: var(--w); }
+svg .RdYlBu .q22-31 { fill: var(--x); }
+svg .RdYlBu .q23-31 { fill: var(--y); }
+svg .RdYlBu .q24-31 { fill: var(--z); }
+svg .RdYlBu .q25-31 { fill: var(--aa); }
+svg .RdYlBu .q26-31 { fill: var(--ab); }
+svg .RdYlBu .q27-31 { fill: var(--ac); }
+svg .RdYlBu .q28-31 { fill: var(--ad); }
+svg .RdYlBu .q29-31 { fill: var(--ae); }
+svg .RdYlBu .q30-31 { fill: var(--af); }
+svg .RdYlBu .q0-32 { fill: var(--a); }
+svg .RdYlBu .q1-32 { fill: var(--b); }
+svg .RdYlBu .q2-32 { fill: var(--c); }
+svg .RdYlBu .q3-32 { fill: var(--d); }
+svg .RdYlBu .q4-32 { fill: var(--e); }
+svg .RdYlBu .q5-32 { fill: var(--f); }
+svg .RdYlBu .q6-32 { fill: var(--g); }
+svg .RdYlBu .q7-32 { fill: var(--h); }
+svg .RdYlBu .q8-32 { fill: var(--i); }
+svg .RdYlBu .q9-32 { fill: var(--j); }
+svg .RdYlBu .q10-32 { fill: var(--k); }
+svg .RdYlBu .q11-32 { fill: var(--l); }
+svg .RdYlBu .q12-32 { fill: var(--m); }
+svg .RdYlBu .q13-32 { fill: var(--n); }
+svg .RdYlBu .q14-32 { fill: var(--o); }
+svg .RdYlBu .q15-32 { fill: var(--p); }
+svg .RdYlBu .q16-32 { fill: var(--q); }
+svg .RdYlBu .q17-32 { fill: var(--r); }
+svg .RdYlBu .q18-32 { fill: var(--s); }
+svg .RdYlBu .q19-32 { fill: var(--t); }
+svg .RdYlBu .q20-32 { fill: var(--u); }
+svg .RdYlBu .q21-32 { fill: var(--v); }
+svg .RdYlBu .q22-32 { fill: var(--w); }
+svg .RdYlBu .q23-32 { fill: var(--x); }
+svg .RdYlBu .q24-32 { fill: var(--y); }
+svg .RdYlBu .q25-32 { fill: var(--z); }
+svg .RdYlBu .q26-32 { fill: var(--aa); }
+svg .RdYlBu .q27-32 { fill: var(--ab); }
+svg .RdYlBu .q28-32 { fill: var(--ac); }
+svg .RdYlBu .q29-32 { fill: var(--ad); }
+svg .RdYlBu .q30-32 { fill: var(--ae); }
+svg .RdYlBu .q31-32 { fill: var(--af); }</style></defs><g transform="translate(10, 30)"><g transform="translate(0, 20)"><g class="x axis"><g class="tick" transform="translate(123.54573170731707,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">50 aa</text></g><g class="tick" transform="translate(249.61280487804876,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">100 aa</text></g><g class="tick" transform="translate(375.6798780487805,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">150 aa</text></g><g class="tick" transform="translate(501.7469512195122,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">200 aa</text></g><g class="tick" transform="translate(627.814024390244,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">250 aa</text></g><g class="tick" transform="translate(0,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">1 aa</text></g><g class="tick" transform="translate(827,0)" style="opacity: 1;"><line y2="-6" x2="0"/><text dy="0em" y="2px" x="25px" transform="rotate(-90)" style="text-anchor: middle;">329 aa</text></g><path class="domain" d="M0,-6V0H827V-6"/></g></g><g class="ghit" transform="translate(0, 28.049999999999997)"><g><a xlink:href="#Query_8_hit_1"><rect data-toggle="tooltip" title="" class="bar" x="501.7469512195122" y="1.54601226993865" width="264.7408536585366" height="4" fill="#000000" data-original-title="SiJWC10CAW.scf&lt;br&gt;E value: &lt;span&gt;1.72 &amp;times; 10&lt;sup&gt;-29&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 44.3%&lt;br&gt;Positives: 67.9%, Gaps: 0%"/></a></g><g><a xlink:href="#Query_8_hit_2"><rect data-toggle="tooltip" title="" class="bar" x="131.109756097561" y="6.699386503067484" width="370.6371951219512" height="4" fill="#89370e" data-original-title="SiJWE11BAA2.scf&lt;br&gt;E value: &lt;span&gt;4.02 &amp;times; 10&lt;sup&gt;-21&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 31.1%&lt;br&gt;Positives: 56.8%, Gaps: 1.4%"/></a></g><g><a xlink:href="#Query_8_hit_3"><rect data-toggle="tooltip" title="" class="bar" x="252.1341463414634" y="11.852760736196318" width="516.875" height="4" fill="#a14010" data-original-title="SI.CL.39.cl.3921.Contig1&lt;br&gt;E value: &lt;span&gt;1.12 &amp;times; 10&lt;sup&gt;-19&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 28%&lt;br&gt;Positives: 45.8%, Gaps: 4.7%"/></a></g><g><a xlink:href="#Query_8_hit_4"><rect data-toggle="tooltip" title="" class="bar" x="146.23780487804876" y="17.006134969325153" width="443.75609756097566" height="4" fill="#a24110" data-original-title="SI.CL.37.cl.3746.Contig1&lt;br&gt;E value: &lt;span&gt;1.26 &amp;times; 10&lt;sup&gt;-19&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 31.9%&lt;br&gt;Positives: 47.9%, Gaps: 6.9%"/></a></g><g><a xlink:href="#Query_8_hit_5"><rect data-toggle="tooltip" title="" class="bar" x="305.0823170731707" y="22.159509202453986" width="226.9207317073171" height="4" fill="#c04d13" data-original-title="SiJWB06ABV.scf&lt;br&gt;E value: &lt;span&gt;8.55 &amp;times; 10&lt;sup&gt;-18&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 41.8%&lt;br&gt;Positives: 59.3%, Gaps: 3.3%"/></a><a xlink:href="#Query_8_hit_5"><rect data-toggle="tooltip" title="" class="bar" x="123.54573170731707" y="22.159509202453986" width="103.375" height="4" fill="#c04d13" data-original-title="SiJWB06ABV.scf&lt;br&gt;E value: &lt;span&gt;8.55 &amp;times; 10&lt;sup&gt;-18&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 40.5%&lt;br&gt;Positives: 57.1%, Gaps: 0%"/></a><line x1="226.9207317073171" y1="24.159509202453986" x2="305.0823170731707" y2="24.159509202453986" stroke="#c04d13"/></g><g><a xlink:href="#Query_8_hit_6"><rect data-toggle="tooltip" title="" class="bar" x="179.015243902439" y="27.31288343558282" width="544.609756097561" height="4" fill="#c34e13" data-original-title="SI.CL.46.cl.4644.Contig1&lt;br&gt;E value: &lt;span&gt;1.33 &amp;times; 10&lt;sup&gt;-17&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 25.8%&lt;br&gt;Positives: 42.1%, Gaps: 5%"/></a></g><g><a xlink:href="#Query_8_hit_7"><rect data-toggle="tooltip" title="" class="bar" x="421.0640243902439" y="32.466257668711656" width="400.8932926829268" height="4" fill="#d25415" data-original-title="SiJWD07BCZ2.scf&lt;br&gt;E value: &lt;span&gt;1.13 &amp;times; 10&lt;sup&gt;-16&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 27.6%&lt;br&gt;Positives: 49.4%, Gaps: 7.1%"/></a></g><g><a xlink:href="#Query_8_hit_8"><rect data-toggle="tooltip" title="" class="bar" x="98.33231707317073" y="37.619631901840485" width="403.4146341463414" height="4" fill="#ea6826" data-original-title="SiJWD11CAF2.scf&lt;br&gt;E value: &lt;span&gt;2.10 &amp;times; 10&lt;sup&gt;-14&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 30%&lt;br&gt;Positives: 47.6%, Gaps: 7.1%"/></a></g><g><a xlink:href="#Query_8_hit_9"><rect data-toggle="tooltip" title="" class="bar" x="118.5030487804878" y="42.77300613496932" width="141.19512195121953" height="4" fill="#ea6a2a" data-original-title="SiJWC05BAR.scf&lt;br&gt;E value: &lt;span&gt;3.27 &amp;times; 10&lt;sup&gt;-14&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 49.1%&lt;br&gt;Positives: 70.2%, Gaps: 0%"/></a></g><g><a xlink:href="#Query_8_hit_10"><rect data-toggle="tooltip" title="" class="bar" x="436.1920731707317" y="47.92638036809816" width="194.1432926829268" height="4" fill="#ed824c" data-original-title="SiJWF05ADM.scf&lt;br&gt;E value: &lt;span&gt;3.95 &amp;times; 10&lt;sup&gt;-12&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 37.2%&lt;br&gt;Positives: 55.1%, Gaps: 0%"/></a></g><g><a xlink:href="#Query_8_hit_11"><rect data-toggle="tooltip" title="" class="bar" x="486.61890243902434" y="53.07975460122699" width="279.8689024390244" height="4" fill="#ef8c5b" data-original-title="SI.CL.24.cl.2464.Contig1&lt;br&gt;E value: &lt;span&gt;3.25 &amp;times; 10&lt;sup&gt;-11&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 28.3%&lt;br&gt;Positives: 46.7%, Gaps: 9.2%"/></a></g><g><a xlink:href="#Query_8_hit_12"><rect data-toggle="tooltip" title="" class="bar" x="279.8689024390244" y="58.233128834355824" width="239.52743902439022" height="4" fill="#f2a178" data-original-title="SiJWG08AAJ.scf&lt;br&gt;E value: &lt;span&gt;2.04 &amp;times; 10&lt;sup&gt;-9&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 28.4%&lt;br&gt;Positives: 46.1%, Gaps: 5.9%"/></a></g><g><a xlink:href="#Query_8_hit_13"><rect data-toggle="tooltip" title="" class="bar" x="582.4298780487804" y="63.38650306748466" width="234.48475609756096" height="4" fill="#f3a782" data-original-title="SiJWA07BBI.scf&lt;br&gt;E value: &lt;span&gt;7.77 &amp;times; 10&lt;sup&gt;-9&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 30.9%&lt;br&gt;Positives: 50%, Gaps: 0%"/></a></g><g><a xlink:href="#Query_8_hit_14"><rect data-toggle="tooltip" title="" class="bar" x="148.7591463414634" y="68.53987730061348" width="297.5182926829268" height="4" fill="#f3ab87" data-original-title="SI.CL.41.cl.4130.Contig1&lt;br&gt;E value: &lt;span&gt;1.66 &amp;times; 10&lt;sup&gt;-8&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 26%&lt;br&gt;Positives: 51.2%, Gaps: 4.9%"/></a></g><g><a xlink:href="#Query_8_hit_15"><rect data-toggle="tooltip" title="" class="bar" x="395.8506097560975" y="73.69325153374231" width="264.7408536585366" height="4" fill="#f5b99b" data-original-title="SiJWG10ADB.scf&lt;br&gt;E value: &lt;span&gt;2.76 &amp;times; 10&lt;sup&gt;-7&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 26.1%&lt;br&gt;Positives: 45%, Gaps: 4.5%"/></a></g><g><a xlink:href="#Query_8_hit_16"><rect data-toggle="tooltip" title="" class="bar" x="385.76524390243907" y="78.84662576687116" width="226.9207317073171" height="4" fill="#f6bea2" data-original-title="SiJWG08AAN.scf&lt;br&gt;E value: &lt;span&gt;7.21 &amp;times; 10&lt;sup&gt;-7&lt;/sup&gt;&lt;/span&gt;&lt;br&gt;Identities: 26.6%&lt;br&gt;Positives: 46.8%, Gaps: 7.4%"/></a></g></g><g transform="translate(0,115)"><rect x="605.25" width="153.4" height="3" fill="url(#legend-grad)"/><text class=" legend-text" transform="translate(0, 3)" x="776.65">Weaker hits</text><text class=" legend-text" transform="translate(0, 3)" x="530.69">Stronger hits</text></g><linearGradient id="legend-grad"><stop offset="0%" stop-color="#000"/><stop offset="45%" stop-color="#c74f14"/><stop offset="100%" stop-color="#f6bea2"/></linearGradient></g></svg>
