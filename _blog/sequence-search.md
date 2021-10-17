@@ -7,8 +7,6 @@ layout: page
 
 # Sequence Search
 
-## Why search sequences?
-
 Reasons for performing sequence searches include:
 
 * wanting to know if the Sanger sequence of the gene you cloned indeed matches the sequence you were expecting,
@@ -18,7 +16,7 @@ Reasons for performing sequence searches include:
 * finding paralogs or orthologs of a gene to perform multiple sequence alignment and identify which parts of the sequence are most conserved,
 * searching whether oligonucleotide primer sequences are likely to amplify non-target regions of the genome.
 
-## Where to perform sequence searches
+## Where to perform BLAST sequence searches
 
 The most widely used online portal for sequence searches is [NCBI's BLAST search](https://blast.ncbi.nlm.nih.gov/Blast.cgi). It's a handy go-to place given that NCBI house the vast majority of published nucleotide and protein sequences.
 
@@ -31,12 +29,12 @@ Challenges with such major repositories include that they get a lot of demand. T
 
 Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.
 
-Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://www.sequenceserver.com) on your computer, including on unpublished data. You can install it and run it locally on a Mac or Linux (its free). But you'll be limited to your local computing power. Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, and includes many features to facilitate your analysis.
+Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://www.sequenceserver.com) on your computer, including on unpublished data. It includes many [visualization approaches](visualizing_blast_results). You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.
 
 <div class="container">
   <div class="row justify-content-center">
- 	<div class="alert alert-info">
-	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">Learn more</a></p>
+ 	<div class="alert alert-info" style="max-width:75%">
+	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">[Learn more]</a></p>
 	  <p  style="text-align:center"><a href="https://sequenceserver.com/cloud"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt"/></a></p>
     </div>
   </div>
