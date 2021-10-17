@@ -12,18 +12,18 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
 <meta property="og:description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
-<link rel="canonical" href="https://sequenceserver.com/paper/" />
-<meta property="og:url" content="https://sequenceserver.com/paper/" />
+<link rel="canonical" href="http://localhost:4000/paper/" />
+<meta property="og:url" content="http://localhost:4000/paper/" />
 <meta property="og:site_name" content="SequenceServer" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Sequenceserver: A Modern Graphical User Interface for Custom BLAST Databases" />
 <script type="application/ld+json">
-{"@type":"WebPage","description":"Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science.","headline":"Sequenceserver: A Modern Graphical User Interface for Custom BLAST Databases","url":"https://sequenceserver.com/paper/","@context":"https://schema.org"}</script>
+{"url":"http://localhost:4000/paper/","description":"Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science.","headline":"Sequenceserver: A Modern Graphical User Interface for Custom BLAST Databases","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
   <meta name="keywords"
-    content="local NCBI BLAST, custom BLAST, local BLAST server, BLAST web frontend, local BLAST, BLAST web interface, galaxy, viroblast">
+    content="run blast on mac, local NCBI BLAST, custom BLAST, local BLAST server, BLAST web frontend, local BLAST, BLAST web interface, galaxy, viroblast">
   <!-- Support HTML5 elements and media queries on IE8 and less. -->
   <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -56,11 +56,12 @@
     <div class="container">
       <div class="brand-container">
         <a class="navbar-brand navbar-left" href="/"><img class="logo" src="/img/logos/SequenceServer_logo.png"
-            alt="sequenceserver_logo">&nbsp;<span>1.0.14</span></a>
-        <a class="navbar-brand-made-by" href="//wurmlab.github.io">
-          created by Wurmlab
+							  alt="sequenceserver_logo">&nbsp;<span>1.0.14</span></a>
+	<a class="navbar-brand-made-by" href="//wurmlab.com">
+          made by Wurmlab @ Queen Mary University of London
         </a>
-      </div> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -78,8 +79,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cloud/" style="font-weight: bold;">
-              Cloud service
+            <a class="nav-link" href="/cloud/" style="font-weight: bold; background-color:#ffcccc;">
+              Hosted cloud service
             </a>
           </li>
           <li class="nav-item">
@@ -95,11 +96,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/#users">
               Users
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/paper">
-              Paper
             </a>
           </li>
           <li class="nav-item">
@@ -121,10 +117,10 @@
     </div>
   </nav>
   <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5 stats-banner" role="banner">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5 stats-banner justify-content-center" role="banner">
     <div class="">
         <div>
-            <p><i class="fa fa-quote-left" aria-hidden="true"></i> 130+ citations</p>
+            <p><a href="/#users"><i class="fa fa-quote-left" aria-hidden="true"></i> 130+ citations</a></p>
         </div>
     </div>
     <div class="col d-flex align-items-start">
@@ -134,15 +130,16 @@
     </div>
     <div class="col d-flex align-items-start">
         <div>
-            <p><i class="fa fa-download" aria-hidden="true"></i> 80,000+ downloads</p>
+            <p><a href="https://rubygems.org/gems/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-download" aria-hidden="true"></i> 90,000+ downloads</a></p>
         </div>
     </div>
     <div class="col d-flex align-items-start">
         <div>
-            <a href="https://github.com/wurmlab/sequenceserver" target="_blank" rel="noreferrer"><p><i class="fa fa-star" aria-hidden="true"></i> 217 stars on GitHub</p></a>
+            <p><a href="https://github.com/wurmlab/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-star" aria-hidden="true"></i> 217 stars on GitHub</a></p>
         </div>
     </div>
 </div>
+
     <h1>Sequenceserver: A Modern Graphical User Interface for Custom BLAST Databases</h1>
 
 <p>Anurag Priyam, Ben J Woodcroft, Vivek Rai, Ismail Moghul, Alekhya Munagala, Filip Ter, Hiten Chowdhary, Iwo Pieniak,
@@ -352,17 +349,13 @@
   <footer style="background-color: white">
     <hr>
     <div class="container" style="text-align: center; padding: 20px 0;">
-      <p>
-        <a href="http://www.biorxiv.org/content/early/2015/11/27/033142">
-          Priyam A, Woodcroft BJ, Rai V, Munagala A, Moghul I, Ter F, Gibbins MA, Moon H, Leonard G, Rumpf W &amp; Wurm
-          Y. 2015. Sequenceserver: a modern graphical user interface for custom BLAST databases. biorxiv doi:
-          10.1101/033142.
+      <p>Please cite:
+        <a href="/paper">
+	  Sequenceserver: a modern graphical user interface for custom BLAST databases. (2019) Molecular Biology &amp; Evolution</a>
         </a>
       </p>
       <p>
-        SequenceServer is &copy; 5bases pvt ltd (2012-2016) and authors.
-        Parts of SequenceServer are &copy; Universit&eacute; de Lausanne
-        (2011).
+        SequenceServer is &copy; 5bases Ltd (2012-2016) and authors. Parts of SequenceServer are &copy; Universit&eacute; de Lausanne (2011) and &copy; Queen Mary University of London (2012-). SequenceServer Cloud is a service provided by <a href="http://pragmaticgenomics.com">Pragmatic Genomics Limited</a>. 
       </p>
     </div>
   </footer>

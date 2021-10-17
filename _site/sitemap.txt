@@ -8,5 +8,6 @@ https://sequenceserver.com/progress-on-BLAST-interface.html
 https://sequenceserver.com/sitemap.txt
 
 https://sequenceserver.com/blog/sequence-search/
+https://sequenceserver.com/blog/visualizing_blast_results/
 
 https://sequenceserver.com/cloud/index.html

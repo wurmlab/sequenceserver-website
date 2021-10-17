@@ -6,21 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Sequence Search | SequenceServer</title>
+<title>Visualizing and interepreting BLAST alignments | SequenceServer</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Sequence Search" />
+<meta property="og:title" content="Visualizing and interepreting BLAST alignments" />
+<meta name="author" content="Yannick" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Sequence Search" />
-<meta property="og:description" content="Sequence Search" />
-<link rel="canonical" href="http://localhost:4000/blog/sequence-search/" />
-<meta property="og:url" content="http://localhost:4000/blog/sequence-search/" />
+<meta name="description" content="SequenceServer incorporates four powerful visualizations that help researchers interpret BLAST alignment results." />
+<meta property="og:description" content="SequenceServer incorporates four powerful visualizations that help researchers interpret BLAST alignment results." />
+<link rel="canonical" href="http://localhost:4000/blog/visualizing_blast_results/" />
+<meta property="og:url" content="http://localhost:4000/blog/visualizing_blast_results/" />
 <meta property="og:site_name" content="SequenceServer" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-24T23:03:32+01:00" />
+<meta property="article:published_time" content="2021-10-17T13:03:32+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sequence Search" />
+<meta property="twitter:title" content="Visualizing and interepreting BLAST alignments" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/sequence-search/"},"url":"http://localhost:4000/blog/sequence-search/","description":"Sequence Search","dateModified":"2021-07-24T23:03:32+01:00","datePublished":"2021-07-24T23:03:32+01:00","headline":"Sequence Search","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/visualizing_blast_results/"},"url":"http://localhost:4000/blog/visualizing_blast_results/","author":{"@type":"Person","name":"Yannick"},"description":"SequenceServer incorporates four powerful visualizations that help researchers interpret BLAST alignment results.","dateModified":"2021-10-17T13:03:32+01:00","datePublished":"2021-10-17T13:03:32+01:00","headline":"Visualizing and interepreting BLAST alignments","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
@@ -142,56 +143,84 @@
     </div>
 </div>
 
-    <h1 id="sequence-search">Sequence Search</h1>
+    <h1 id="visualizing-and-interpreting-blast-alignments">Visualizing and interpreting BLAST alignments</h1>
 
-<p>Reasons for performing sequence searches include:</p>
+<p>When running BLAST in the command-line, you end up with a large amount of text. If you have one query with one HSP in a single hit sequence of your BLAST database, interpretation is easy.</p>
+
+<p>However, things are more complicated if:</p>
 
 <ul>
-  <li>wanting to know if the Sanger sequence of the gene you cloned indeed matches the sequence you were expecting,</li>
-  <li>checking whether targeted CRISPR mutagenesis was successful,</li>
-  <li>identifying the sequence of a candidate gene in a newly sequenced genome,</li>
-  <li>finding out the potential function of a gene,</li>
-  <li>finding paralogs or orthologs of a gene to perform multiple sequence alignment and identify which parts of the sequence are most conserved,</li>
-  <li>searching whether oligonucleotide primer sequences are likely to amplify non-target regions of the genome.</li>
+  <li>you have many queries,</li>
+  <li>you have multiple HSPs per hit,</li>
+  <li>you have multiple hits,</li>
+  <li>you have a combination of the above.</li>
 </ul>
 
-<h2 id="where-to-perform-blast-sequence-searches">Where to perform BLAST sequence searches</h2>
+<p>It’s particularly confusing when multiple aligning segments (HSPs) aren’t in chromosomal order. But why should they be? Aligning segments are ordered by biological similarity (e-value). This is great for some contexts, but not necessarily, say when you are trying to understand how many times your query gene is present in the target genome.</p>
 
-<p>The most widely used online portal for sequence searches is <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s BLAST search</a>. It’s a handy go-to place given that NCBI house the vast majority of published nucleotide and protein sequences.</p>
+<p><strong>It quickly becomes a mess</strong> trying to integrate large amounts of text and numbers by keeping track of coordinates on the hit sequences, coordinates on the query sequence, and reading frames and DNA strands…</p>
 
-<p>However, other contexts for BLAST sequence search also exist. These include:
-The <a href="https://www.ebi.ac.uk/ena/browser/sequence-search">European Nucleotide Archive</a>, which hosts a mirror of NCBI’s data,
-<a href="https://www.uniprot.org/blast/">UniProt</a>, who have subsets of the protein sequence data that meet specific quality standards,
-and domain-specific websites such as <a href="http://flybase.org">Flybase</a> or the <a href="https://antgenomes.org">ant genome database</a>.</p>
+<p>Speaking from experience, the easiest can be to draw a summary picture on a piece of paper. But it’s 2021 - computers should be able to automate that!</p>
 
-<p>Challenges with such major repositories include that they get a lot of demand. Thus your sequence search can be “queued” for a while until computing capacity becomes available. Furthermore, public websites for sequence search typically have size restrictions on query sequences. Finally, they do not enable you to search against unpublished sequences.</p>
+<h2 id="a-picture-is-worth-1000-words">A picture is worth 1000 words</h2>
 
-<p>Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.</p>
+<p>Visualizations to make BLAST result interpretation easier exist thanks to many efforts, including those at NCBI, those we made for <a href="https://doi.org/10.1093/bioinformatics/btw015">GeneValidator</a>, the work of Nikos Darzentas with Circoletto and the work of Jeff Wintersinger &amp; James Wasmuth with Kablammo.</p>
 
-<p>Our SequenceServer software provides a pragmatic alternative for <a href="https://www.sequenceserver.com">performing local BLAST sequence searches</a> on your computer, including on unpublished data. It includes many <a href="../visualizing_blast_results">visualization approaches</a>. You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use <a href="https://www.sequenceserver.com/cloud">SequenceServer Cloud</a>. Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.</p>
+<p>We took inspiration from those efforts so that SequenceServer could better help biologists interpret BLAST results.</p>
 
 <div class="container">
   <div class="row justify-content-center">
  	<div class="alert alert-info" style="max-width:75%">
-	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">[Learn more]</a></p>
+   <p><strong>SequenceServer 2.0 provides all of the visualizations below are in every BLAST result</strong>. Furthermore you can download them in vectorial (SVG) or PNG format, and use them directly for publications. No need to export BLAST results into a different software or to sketch by hand.</p>
+  </div>
+  </div>
+</div>
+
+<h2 id="sequenceservers-overview-of-how-hit-sequences-align-to-the-blast-search-query">SequenceServer’s overview of how hit sequences align to the BLAST search query</h2>
+
+<p>Everyone who has used NCBI’s BLAST will have seen the overview of how hits align to the query sequence. SequenceServer provides a similar overview. A key difference is that in our visualization, darker segments means stronger e-value. This can be more intuitive to understand thatn the somewhat psychedelic colors that NCBI uses by default.</p>
+
+<p><img src="/img/visualization/BLAST-hits-align-to-different-regions-of-query-sequence.png" alt="How hit sequences align to the BLAST query" width="4235" height="750" style="max-width:75%; height: auto; padding-left:10%" />
+<br /><br /></p>
+
+<h2 id="pairwise-alignments-of-blast-query-and-hit-sequences-showing-each-hsp">Pairwise alignments of BLAST query and hit sequences showing each HSP</h2>
+
+<p>For each hit sequence (horizontal at the bottom), we show how each aligning segment (HSP or High Scoring Pair) aligns to the query sequence (horizontal at the top). Darker alignment means stronger similarity.</p>
+
+<p><img src="/img/visualization/pairwise-overview-of-HSPs-aligning-between-BLAST-query-and-hit-sequence.png" alt="Pairwise overview of HSPs aligning between BLAST query and hit sequence - as generated using SequenceServer's Kablammo integration" width="862" height="167" style="max-width:75%; height: auto; padding-left:10%" /></p>
+
+<h2 id="comparing-the-lengths-of-blast-queries-and-the-lengths-of-hits">Comparing the lengths of BLAST queries and the lengths of hits</h2>
+
+<p>For each query sequence, we show a histogram of lengths of aligning sequences. Here, the query sequence is more than 1200 amino-acids long, while most hit sequences from the database are much shorter. Most of the hit sequences are 450 to 650 amino-acids long. The hit sequences with the highest BLAST similarity to the query sequence have the darkest color; their lengths cluster around 550-650 amino-acids long.</p>
+
+<p><img src="/img/visualization/blast-hit-protein-length-distribution.png" alt="Distribution of lengths of hit sequences compared to the query sequence" width="4235" height="750" style="max-width:75%; height: auto; padding-left:10%" /></p>
+
+<h2 id="circoscircoletto-like-overview-of-segments-hsps-aligning-between-blast-query-and-hit-sequences">Circos/Circoletto-like overview of segments (HSPs) aligning between BLAST query and hit sequences</h2>
+
+<p>Here, three query sequences (in gray) show high similarity to a much larger number of query sequences.</p>
+
+<p><img src="/img/visualization/circos-plot-of-blast-hits-sequenceserver.gif" alt="Circos overview showing BLAST hit alignments" width="1079" height="875" style="max-width:75%; height: auto; padding-left:10%" /></p>
+
+<h2 id="installing-sequenceserver">Installing SequenceServer</h2>
+
+<p>You can readily perform BLAST analyses using SequenceServer, or use SequenceServer to visualise BLAST XML output. Install it yourself, or use our cloud service to perform and interpret BLAST analyses.</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+ 	<div class="alert alert-info" style="max-width:75%">
+	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">Learn more</a></p>
 	  <p style="text-align:center"><a href="https://sequenceserver.com/cloud"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt" /></a></p>
     </div>
   </div>
 </div>
 
-<h2 id="the-broad-diversity-of-sequence-search-algorithms">The broad diversity of sequence search algorithms</h2>
+<!--
+## General considerations for design of biological data visualization
 
-<p>BLAST, whether used at NCBI, as local installation, or <a href="https://www.sequenceserver.com/cloud">online using a cloud service</a> is the mainly used sequence search algorithm, with <strong>more than 100,000 citations</strong>.</p>
+Each of the visualizations has helped us in our interpretation of BLAST results. For each visualization, we tried to respect
 
-<p>BLAST is great for searching large databases with “small” query sequences. Today’s BLAST algorithm is far more computationally efficient than those from twenty years ago. However, BLAST isn’t necessarily the most appropriate sequence search algorithm for every job. Other algorithms include BLAT, USearch, minimap. The following article reviews the history of sequence search algorithms and the tradeoffs among search algorithms:</p>
-
-<blockquote>
-  <p><a href="https://doi.org/10.1093/bioinformatics/btz272"><strong>Evolution of biosequence search algorithms: a brief survey</strong></a><br />
-<em>Gregory Kucherov</em>. Bioinformatics (2019), 35:3547–3552<br />
-<em>Although modern high-throughput biomolecular technologies produce various types of data, biosequence data remain at the core of bioinformatic analyses. However, computational techniques for dealing with this data evolved dramatically.
-Results
-In this bird’s-eye review, we overview the evolution of main algorithmic techniques for comparing and searching biological sequences. We highlight key algorithmic ideas emerged in response to several interconnected factors: shifts of biological analytical paradigm, advent of new sequencing technologies and a substantial increase in size of the available data. We discuss the expansion of alignment-free techniques coming to replace alignment-based algorithms in large-scale analyses. We further emphasize recently emerged and growing applications of sketching methods which support comparison of massive datasets, such as metagenomics samples. Finally, we focus on the transition to population genomics and outline associated algorithmic challenges.</em></p>
-</blockquote>
+We
+-->
 
   </div>
 
