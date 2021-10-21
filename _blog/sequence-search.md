@@ -29,13 +29,13 @@ Challenges with such major repositories include that they get a lot of demand. T
 
 Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.
 
-Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://www.sequenceserver.com) on your computer, including on unpublished data. It includes many [visualization approaches](../visualizing_blast_results). You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.
+Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://sequenceserver.com) on your computer, including on unpublished data. It includes many [visualization approaches](../visualizing_blast_results/). You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud/). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.
 
 <div class="container">
   <div class="row justify-content-center">
  	<div class="alert alert-info" style="max-width:75%">
-	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">[Learn more]</a></p>
-	  <p  style="text-align:center"><a href="https://sequenceserver.com/cloud"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt"/></a></p>
+	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="https://sequenceserver.com/cloud/">[Learn more]</a></p>
+	  <p  style="text-align:center"><a href="https://sequenceserver.com/cloud/"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt"/></a></p>
     </div>
   </div>
 </div>
@@ -43,7 +43,7 @@ Our SequenceServer software provides a pragmatic alternative for [performing loc
 
 ## The broad diversity of sequence search algorithms
 
-BLAST, whether used at NCBI, as local installation, or [online using a cloud service](https://www.sequenceserver.com/cloud) is the mainly used sequence search algorithm, with **more than 100,000 citations**.
+BLAST, whether used at NCBI, as local installation, or [online using a cloud service](https://www.sequenceserver.com/cloud/) is the mainly used sequence search algorithm, with **more than 100,000 citations**.
 
 BLAST is great for searching large databases with "small" query sequences. Today's BLAST algorithm is far more computationally efficient than those from twenty years ago. However, BLAST isn't necessarily the most appropriate sequence search algorithm for every job. Other algorithms include BLAT, USearch, minimap. The following article reviews the history of sequence search algorithms and the tradeoffs among search algorithms:
 

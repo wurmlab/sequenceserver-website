@@ -72,8 +72,8 @@ You can readily perform BLAST analyses using SequenceServer, or use SequenceServ
 <div class="container">
   <div class="row justify-content-center">
  	<div class="alert alert-info" style="max-width:75%">
-	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="http://sequenceserver.com/cloud">Learn more</a></p>
-	  <p  style="text-align:center"><a href="https://sequenceserver.com/cloud"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt"/></a></p>
+	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="https://sequenceserver.com/cloud/">Learn more</a></p>
+	  <p  style="text-align:center"><a href="https://sequenceserver.com/cloud/"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt"/></a></p>
     </div>
   </div>
 </div>

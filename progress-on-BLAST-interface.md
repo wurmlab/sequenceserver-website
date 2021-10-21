@@ -61,7 +61,7 @@ Thanks to Niek Art, Matt Yoder, Massimiliano babbucci, Bjoernsen, and Eric Y for
 4. Results page would fail to load completely if the submitted queries resulted in no hits. Fixed that.
 5. Give users an option to sign up for release and other important announcements during the initial setup.
 6. Highlight the use of non-default parameters by changing the background of advanced parameters field to yellow when filled.
-7. Include SequenceServer version and a link to our paper in the search summary at the top of the results page.
+7. Include SequenceServer version and a link to our [paper](/paper/) in the search summary at the top of the results page.
 
 ### New documentation
 
@@ -806,5 +806,5 @@ Kind regards,
 Priyam & Yannick
 
 
-http://wurmlab.com
+https://wurmlab.com
 Evolutionary genomics @ Queen Mary U London
