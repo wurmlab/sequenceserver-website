@@ -5,6 +5,7 @@ categories: blast sequence-search datavisualization
 layout: page
 author: Yannick
 description: SequenceServer incorporates four powerful visualizations that help researchers interpret BLAST alignment results.
+redirect-from: visualizing_blast_results
 ---
 
 # Visualizing and interpreting BLAST alignments

@@ -29,7 +29,9 @@ Challenges with such major repositories include that they get a lot of demand. T
 
 Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.
 
-Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://sequenceserver.com) on your computer, including on unpublished data. It includes many [visualization approaches](../visualizing_blast_results/). You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud/). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.
+You can also [perform BLAST analyses in the cloud](/blog/cloud-blast).
+
+Our SequenceServer software provides a pragmatic alternative for [performing local BLAST sequence searches](https://sequenceserver.com) on your computer, including on unpublished data. It includes many [visualization approaches](../visualizing_blast_results/). You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use [SequenceServer Cloud](https://www.sequenceserver.com/cloud/). Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster. 
 
 <div class="container">
   <div class="row justify-content-center">

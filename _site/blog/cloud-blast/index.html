@@ -6,21 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Sequence Search | SequenceServer</title>
+<title>BLAST in the cloud | SequenceServer</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Sequence Search" />
+<meta property="og:title" content="BLAST in the cloud" />
+<meta name="author" content="Yannick" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Sequence Search" />
-<meta property="og:description" content="Sequence Search" />
-<link rel="canonical" href="http://localhost:4000/blog/sequence-search/" />
-<meta property="og:url" content="http://localhost:4000/blog/sequence-search/" />
+<meta name="description" content="Run BLAST analyses in the cloud to get results faster, or search on unpublished data." />
+<meta property="og:description" content="Run BLAST analyses in the cloud to get results faster, or search on unpublished data." />
+<link rel="canonical" href="http://localhost:4000/blog/cloud-blast/" />
+<meta property="og:url" content="http://localhost:4000/blog/cloud-blast/" />
 <meta property="og:site_name" content="SequenceServer" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-24T23:03:32+01:00" />
+<meta property="article:published_time" content="2021-10-25T13:03:32+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sequence Search" />
+<meta property="twitter:title" content="BLAST in the cloud" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","headline":"Sequence Search","dateModified":"2021-07-24T23:03:32+01:00","datePublished":"2021-07-24T23:03:32+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/sequence-search/"},"description":"Sequence Search","url":"http://localhost:4000/blog/sequence-search/","@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","headline":"BLAST in the cloud","dateModified":"2021-10-25T13:03:32+01:00","datePublished":"2021-10-25T13:03:32+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/cloud-blast/"},"author":{"@type":"Person","name":"Yannick"},"description":"Run BLAST analyses in the cloud to get results faster, or search on unpublished data.","url":"http://localhost:4000/blog/cloud-blast/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
@@ -142,58 +143,52 @@
     </div>
 </div>
 
-    <h1 id="sequence-search">Sequence Search</h1>
+    <h1 id="performing-blast-analyses-in-the-cloud">Performing BLAST analyses in the Cloud</h1>
 
-<p>Reasons for performing sequence searches include:</p>
+<p><img src="/img/blog/hpc-cloud-blast.jpg" alt="Cloud cluster for faster analysis - Datacenter photo credit Hyacinthe C - https://flic.kr/p/wrJuV7" width="4403" height="1772" style="max-width:75%; height: auto; padding-left:10%" /></p>
 
+<h2 id="why-you-might-want-to-use-the-cloud-to-run-blast-analyses">Why you might want to use the Cloud to run BLAST analyses</h2>
+
+<p>There are three main scenarios in which you’re likely to want to run BLAST in the cloud.</p>
+
+<p><em>Scenario A</em>: you have <strong>unpublished or proprietary databases</strong> that are not available at the NCBI BLAST website</p>
+
+<p><em>Scenario B</em>: you’ve been running BLAST on your local computer, but:</p>
 <ul>
-  <li>wanting to know if the Sanger sequence of the gene you cloned indeed matches the sequence you were expecting,</li>
-  <li>checking whether targeted CRISPR mutagenesis was successful,</li>
-  <li>identifying the sequence of a candidate gene in a newly sequenced genome,</li>
-  <li>finding out the potential function of a gene,</li>
-  <li>finding paralogs or orthologs of a gene to perform multiple sequence alignment and identify which parts of the sequence are most conserved,</li>
-  <li>searching whether oligonucleotide primer sequences are likely to amplify non-target regions of the genome.</li>
+  <li>you want results <strong>faster</strong>;</li>
+  <li>you have <strong>insufficient memory or storage</strong> space for the BLAST databases and results;</li>
+  <li>you want to <strong>avoid clogging up your laptop</strong>’s cpu/processors (note that you should avoid overheating your laptop to <a href="https://www.lifewire.com/problem-with-overheating-laptops-2377646">avoid damaging your machine</a>).</li>
 </ul>
 
-<h2 id="where-to-perform-blast-sequence-searches">Where to perform BLAST sequence searches</h2>
+<p><em>Scenario C</em>: you <em>could</em> run blast on your high performance computing cluster (HPC).</p>
+<ul>
+  <li>The HPC has plenty of space, RAM, and computing cores, its secure and can host proprietary data.</li>
+  <li>But you want to <strong>avoid command-line blast</strong>, because its an effort to run, and difficult to make sense of.</li>
+  <li>In this case you may <strong>prefer to use a point-and-click graphical interface</strong> for BLAST and get <a href="/blog/visualizing_blast_results">BLAST graphics that help you interpret analysis results</a>.</li>
+</ul>
 
-<p>The most widely used online portal for sequence searches is <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s BLAST search</a>. It’s a handy go-to place given that NCBI house the vast majority of published nucleotide and protein sequences.</p>
+<p><em>Scenario D</em>: you’re tired of waiting for NCBI BLAST, or want to submit larger queries than what it will support. Sure it’s free, but your time is precious and you need to get things done.</p>
 
-<p>However, other contexts for BLAST sequence search also exist. These include:
-The <a href="https://www.ebi.ac.uk/ena/browser/sequence-search">European Nucleotide Archive</a>, which hosts a mirror of NCBI’s data,
-<a href="https://www.uniprot.org/blast/">UniProt</a>, who have subsets of the protein sequence data that meet specific quality standards,
-and domain-specific websites such as <a href="http://flybase.org">Flybase</a> or the <a href="https://antgenomes.org">ant genome database</a>.</p>
+<h2 id="using-cloud-computing-for-blast-analysis">Using cloud computing for BLAST analysis</h2>
 
-<p>Challenges with such major repositories include that they get a lot of demand. Thus your sequence search can be “queued” for a while until computing capacity becomes available. Furthermore, public websites for sequence search typically have size restrictions on query sequences. Finally, they do not enable you to search against unpublished sequences.</p>
+<p>By using cloud computing for BLAST analysis, you’re running BLAST on a server that should have much more computing power than the computer in front of you.</p>
 
-<p>Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.</p>
+<p>You can run the analyses through a web browser with a point-and-click interface, or in the command-line.</p>
 
-<p>You can also <a href="/blog/cloud-blast">perform BLAST analyses in the cloud</a>.</p>
+<h2 id="mechanisms-for-running-blast-searches-in-the-cloud">Mechanisms for running BLAST searches in the Cloud</h2>
 
-<p>Our SequenceServer software provides a pragmatic alternative for <a href="https://sequenceserver.com">performing local BLAST sequence searches</a> on your computer, including on unpublished data. It includes many <a href="../visualizing_blast_results/">visualization approaches</a>. You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use <a href="https://www.sequenceserver.com/cloud/">SequenceServer Cloud</a>. Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.</p>
+<p>If you’re <strong>happy to use BLAST in the command-line</strong>, you can set things up yourself on one of the major cloud computing platforms (e.g., <a href="https://www.ovhcloud.com/">OVH</a>, Microsoft Azure, or Amazon Web Services), where you pay according to your usage. In particular, NCBI provide <a href="https://github.com/ncbi/blast_plus_docs">documentation</a> and a BLAST+ Docker image to enable you to set up your own cloud computing environment for running command-line BLAST.</p>
 
-<div class="container">
-  <div class="row justify-content-center">
- 	<div class="alert alert-info" style="max-width:75%">
-	  <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="https://sequenceserver.com/cloud/">[Learn more]</a></p>
-	  <p style="text-align:center"><a href="https://sequenceserver.com/cloud/"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt" /></a></p>
-    </div>
-  </div>
-</div>
+<p>If you want a <strong>simple setup for running BLAST and prefer to use a graphical interface</strong>, you’ll probably prefer our <a href="/cloud">SequenceServer Cloud</a> solution. It makes BLAST analysis accessible through the web browser. Just point and click. It uses the most recent and powerful versions of BLAST and SequenceServer, which provides many benefits for sensitivity, specificity, <a href="/blog/visualizing_blast_results">visualization and interpretation</a> (the <a href="/paper">paper describing SequenceServer BLAST</a> has <a href="/#users">been cited by hundreds of researchers</a> and is used in labs and companies worldwide).</p>
 
-<h2 id="the-broad-diversity-of-sequence-search-algorithms">The broad diversity of sequence search algorithms</h2>
+<p>A SequenceServer Cloud instance for BLAST analysis can be private or publically available:</p>
 
-<p>BLAST, whether used at NCBI, as local installation, or <a href="https://www.sequenceserver.com/cloud/">online using a cloud service</a> is the mainly used sequence search algorithm, with <strong>more than 100,000 citations</strong>.</p>
+<ul>
+  <li><strong>Private SequenceServer Cloud</strong> instances are highly secured, encrypted and password protected. Access can be only for yourself, or be shared among members of your laboratory, institution or company.  You choose who can have access your instance for performing searches against your sequence databases, and who can access your search results.</li>
+  <li><strong>Public SequenceServer Cloud</strong> instances are ideal if you want to share your data broadly and allow anyone to search against it. This can be ideal if you sequenced a new genome and want to create an online genome database for your species.</li>
+</ul>
 
-<p>BLAST is great for searching large databases with “small” query sequences. Today’s BLAST algorithm is far more computationally efficient than those from twenty years ago. However, BLAST isn’t necessarily the most appropriate sequence search algorithm for every job. Other algorithms include BLAT, USearch, minimap. The following article reviews the history of sequence search algorithms and the tradeoffs among search algorithms:</p>
-
-<blockquote>
-  <p><a href="https://doi.org/10.1093/bioinformatics/btz272"><strong>Evolution of biosequence search algorithms: a brief survey</strong></a><br />
-<em>Gregory Kucherov</em>. Bioinformatics (2019), 35:3547–3552<br />
-<em>Although modern high-throughput biomolecular technologies produce various types of data, biosequence data remain at the core of bioinformatic analyses. However, computational techniques for dealing with this data evolved dramatically.
-Results
-In this bird’s-eye review, we overview the evolution of main algorithmic techniques for comparing and searching biological sequences. We highlight key algorithmic ideas emerged in response to several interconnected factors: shifts of biological analytical paradigm, advent of new sequencing technologies and a substantial increase in size of the available data. We discuss the expansion of alignment-free techniques coming to replace alignment-based algorithms in large-scale analyses. We further emphasize recently emerged and growing applications of sketching methods which support comparison of massive datasets, such as metagenomics samples. Finally, we focus on the transition to population genomics and outline associated algorithmic challenges.</em></p>
-</blockquote>
+<p><a href="/cloud/">SequenceServer Cloud</a> has a low monthly cost, and discounts for students, academics and yearly payments.</p>
 
   </div>
 
