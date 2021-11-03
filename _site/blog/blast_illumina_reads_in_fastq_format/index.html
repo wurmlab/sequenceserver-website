@@ -6,19 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Error 404 | SequenceServer</title>
+<title>BLASTing Illumina reads in FASTQ format | SequenceServer</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Error 404" />
+<meta property="og:title" content="BLASTing Illumina reads in FASTQ format" />
+<meta name="author" content="Yannick" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
-<meta property="og:description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
-<link rel="canonical" href="https://sequenceserver.com/404.html" />
-<meta property="og:url" content="https://sequenceserver.com/404.html" />
+<meta name="description" content="BLAST is powerful, but not necessarily apprpriate for analysis of FASTQ files" />
+<meta property="og:description" content="BLAST is powerful, but not necessarily apprpriate for analysis of FASTQ files" />
+<link rel="canonical" href="https://sequenceserver.com/blog/blast_illumina_reads_in_fastq_format/" />
+<meta property="og:url" content="https://sequenceserver.com/blog/blast_illumina_reads_in_fastq_format/" />
 <meta property="og:site_name" content="SequenceServer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-01T13:03:32+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Error 404" />
+<meta property="twitter:title" content="BLASTing Illumina reads in FASTQ format" />
 <script type="application/ld+json">
-{"url":"https://sequenceserver.com/404.html","description":"Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science.","headline":"Error 404","@type":"WebPage","@context":"https://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"https://sequenceserver.com/blog/blast_illumina_reads_in_fastq_format/"},"url":"https://sequenceserver.com/blog/blast_illumina_reads_in_fastq_format/","author":{"@type":"Person","name":"Yannick"},"description":"BLAST is powerful, but not necessarily apprpriate for analysis of FASTQ files","dateModified":"2021-11-01T13:03:32+00:00","datePublished":"2021-11-01T13:03:32+00:00","headline":"BLASTing Illumina reads in FASTQ format","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
@@ -140,12 +143,51 @@
     </div>
 </div>
 
-    <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">Error 404</h1>
-    <p class="lead mb-4">Ooops, we can't seem to find the page you're looking for.</p>
-    <a href="/"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Back to homepage</button></a>
+    <h1 id="blasting-illumina-reads-in-fastq-format">BLASTing Illumina reads in FASTQ format</h1>
+
+<p>BLAST uses FASTA format for queries and for database creation. So the BLAST algorithm doesn’t directly understand FASTQ format. This is in part because BLAST was created long before the FASTQ format was created, and because FASTQ files are <em>typically</em> inappropriate for BLAST analysis.</p>
+
+<p>FASTQ files typically are the result of Illumina or Nanopore sequencing. FASTQ files thus include a lot of redundancy (many reads from the same subset of the genome or transcriptome, or from a particualr amplicon. When this is the case:</p>
+
+<ul>
+  <li>BLAST analysis will be <strong>slow</strong> because the algorithm needs to search through a much larger set of sequences than if redundancy had been removed. Indeed, FASTQs are typically huge files containing tens to hundreds of millions of read sequences.</li>
+  <li>If results are found, they are likely to include a lot of redundancy (many similar reads obtaining high scores). This <strong>makes interpretation difficult</strong>.</li>
+  <li>Having a particularly large set of redundant sequences to search through also <strong>reduces BLAST’s ability to identify sequence similarities</strong>. This is because BLAST’s detection power depends on the size of the query and database. Indeed, the e-value of a particular alignment is lower if your database or search are larger. (E-value is grossly equivalent  to “the number of times I’d find this match by chance if the database were made up of random nucleotides”).</li>
+</ul>
+
+<h2 id="most-of-the-time-if-you-want-ot-blast-a-fastq-file-youre-probably-not-using-the-best-approach">Most of the time if you want ot BLAST a FASTQ file, you’re probably not using the best approach</h2>
+
+<p>It is likely that you want to first reduce redundancy in your dataset. The most biologically relevant way is often to perform whole genome or transcriptome assembly of your raw reads prior to BLASTing them.</p>
+
+<p>If you do want to work with the raw reads, BLAST often isn’t the best way to perform analysis.</p>
+
+<h2 id="but-what-if-i-really-do-need-to-run-blast-on-fastq-files">But what if I really do need to run BLAST on FASTQ files?</h2>
+
+<p>With the aforementioned caveats that it often is inappropriate to BLAST raw reads, gaining biological insight sometimes does depend on it.</p>
+
+<p>The easiest way of converting FASTQ to FASTA format is to use something like the following <code class="language-plaintext highlighter-rouge">seqtk</code> command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seqtk seq -A input.fq &gt; output.fasta
+</code></pre></div></div>
+
+<p>There are many other ways - I recommend using a tried and tested tool rather than creating your own thing by creatively using grep or perl.</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="alert alert-info" style="max-width:75%">
+   <p>By leveraging cloud computing and publication-ready graphics, SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. <a href="https://sequenceserver.com/cloud/">Learn more</a></p>
+   <p style="text-align:center"><a href="https://sequenceserver.com/cloud/"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt" /></a></p>
+    </div>
+  </div>
 </div>
 
+<!--
+## General considerations for design of biological data visualization
+
+Each of the visualizations has helped us in our interpretation of BLAST results. For each visualization, we tried to respect
+
+We
+-->
 
   </div>
 

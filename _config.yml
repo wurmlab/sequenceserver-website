@@ -15,3 +15,5 @@ collections:
 ## Plugins
 plugins:
   - jekyll-seo-tag
+
+production: true
