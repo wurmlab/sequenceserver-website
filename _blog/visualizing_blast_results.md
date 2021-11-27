@@ -48,7 +48,7 @@ Everyone who has used NCBI's BLAST will have seen the overview of how hits align
 
 ## Pairwise alignments of BLAST query and hit sequences showing each HSP
 
-For each hit sequence (horizontal at the bottom), we show how each aligning segment (HSP or High Scoring Pair) aligns to the query sequence (horizontal at the top). Darker alignment means stronger similarity.
+For each hit sequence (horizontal at the bottom), we show how each aligning segment (HSP or High Scoring Pair) aligns to the query sequence (horizontal at the top). Darker alignment means stronger similarity. This visualization is derived from James Wasmuth's work with Kablammo.
 
 ![Pairwise overview of HSPs aligning between BLAST query and hit sequence - as generated using SequenceServer's Kablammo integration](/img/visualization/pairwise-overview-of-HSPs-aligning-between-BLAST-query-and-hit-sequence.png){: width="862" height="167" style="max-width:75%; height: auto; padding-left:10%"}
 
