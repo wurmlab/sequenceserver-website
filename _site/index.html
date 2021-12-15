@@ -52,13 +52,13 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-xl navbar-light fixed-top">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top">
     <div class="container">
       <div class="brand-container">
         <a class="navbar-brand navbar-left" href="/"><img class="logo" src="/img/logos/SequenceServer_logo.png"
 							  alt="sequenceserver_logo">&nbsp;<span>1.0.14</span></a>
-	<a class="navbar-brand-made-by" href="//wurmlab.com">
-          made by Wurmlab @ Queen Mary University of London
+	</br><a class="navbar-brand-made-by" href="//wurmlab.com">
+          by Wurmlab @ Queen Mary University of London
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -67,7 +67,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-0 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="/#installation">
               Installation
@@ -83,12 +83,7 @@
               Hosted cloud service
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/#license">
-              License
-            </a>
-          </li>
-          <li class="nav-item">
+          <li class="nav-item hidden-md" >
             <a class="nav-link" href="/#support">
               Support
             </a>
@@ -98,18 +93,11 @@
               Users
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item hidden-md">
             <a class="visible-lg nav-link" href="https://antgenomes.sequenceserver.com" title="Will open in new window"
               target="_blank" rel="noopener">
               <i class="fa fa-external-link" aria-hidden="true"></i>
               Demo
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="visible-lg nav-link" href="https://github.com/wurmlab/sequenceserver"
-              title="Will open GitHub in new window" target="_blank" rel="noopener">
-              <i class="fa fa-external-link" aria-hidden="true"></i>
-              Code
             </a>
           </li>
         </ul>
@@ -429,98 +417,49 @@
   <div class="main col-lg-9">
     <section id="about">
       <div class="page-header">
-        <h1>
-          SequenceServer
-          <small>
+        <h1><small>
             BLAST search made easy!
-          </small>
+	  </small>
         </h1>
       </div>
       <div class="row">
         <div class="col-md-7">
           <p>
-            SequenceServer lets you rapidly set up a BLAST+ server for
+            Rapidly set up a BLAST+ server for
             individual use or for sharing datasets with your colleagues and
-            your community. Its minimalist, modern and thoughtful design
-            lets you focus on the biology and getting things done.
+            your community. <strong>Focus on the biology and getting things done.</strong>
             SequenceServer is
             <a href="/#license">free</a> and
             <a href="https://github.com/wurmlab/sequenceserver">open source</a>.
           </p>
 
           <p>
-            SequenceServer has been used for research on emerging model
-            organisms (e.g. sea cucumber, starfish, falcon, Hessian
-            fly, sugar-apple tree, <em>Streptocarpus rexii</em>), and
-            for research in bioadhesion and environmental microbiology.
-            SequenceServer is a main querying mechanism for several
-            community databases (e.g.
+            SequenceServer is extensively used in private and public sector labs for cloning, comparative genomics, gene curation, design of diagnostic markers and many other applications.  Our software has helped research on humans, viruses, bacteria, agricultural plants and animals, and dozens of emerging model organisms. 
+            SequenceServer is a main querying mechanism for <a href="/#users">dozens</a> of community databases (<em>e.g.,</em>
             <a href="http://spottedwingflybase.org/blast">
               <em>Drosophila suzukii</em></a>,
             <a href="https://planmine.mpibpc.mpg.de/planmine/blast.do">
-              planarians</a>
-            and
-            <a href="http://ashgenome.org/sequenceserver">
-              ash
-            </a> tree,
-            <a href="http://amborella.uga.edu/blast/">
-              Amborella</a>,
+              planarians</a>,
+            <a href="https://lotus.au.dk/blast/">
+              <em>Lotus japonicus</em></a>,
             <a href="https://echinodb.uncc.edu/sequenceserver/">
               echinoderms</a>,
             <a href="http://antgenomes.org/blast">
               ants</a>,
             <a href="http://blast.lepbase.org">
               butterfly</a>),
-            and is also used as an
-            <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">
-              educational resource.
-            </a>
+            and is also used for teaching.
           </p>
 
           <p>
-            Read about SequenceServer's user-centric design and
-            sustainable software development philosophy:
+            Our highly cited <a href="/paper">2019 MBE paper</a> provides an overview of SequenceServer's user-centric design and
+            sustainable software development philosophy.
           </p>
-          <blockquote>
-            <a href="/paper/">
-              Sequenceserver: a modern graphical user interface for custom
-              BLAST databases. Molecular Biology and Evolution (2019).
-            </a>
-          </blockquote>
 
-          <div class="page-header">
-            <h2>
-              Rapidly deployed
-            </h2>
-          </div>
-          <ul>
-            <li>
-              Automatically detects BLAST software - if absent the
-              correct version is automatically downloaded.
-            </li>
-            <li>
-              Detects existing BLAST databases and automatically lists
-              them in the search interface.
-            </li>
-            <li>
-              Detects sequence type of FASTA files and prompts to turn
-              them into BLAST databases.
-            </li>
-            <li>
-              Built-in web server for light to medium usage. Can be
-              integrated with Apache / Nginx if required.
-            </li>
-            <li>
-              Easily add custom links to search hits (e.g. to a genome
-              browser or a page describing the sequence).
-            </li>
-          </ul>
+          <h2>
+              Optimal searching &amp; interpretation
+          </h2>
 
-          <div class="page-header">
-            <h2>
-              Easy to use
-            </h2>
-          </div>
           <ul>
             <li>
               Type or paste query sequences, or drag-and-drop a FASTA
@@ -552,9 +491,36 @@
               interactive, visual feedback.
             </li>
           </ul>
-        </div>
 
-        <div class="col-md-5">
+
+            <h2>
+              Rapidly deployed
+	      </h2>
+              <ul>
+            <li>
+              Automatically detects BLAST software - if absent the
+              correct version is automatically downloaded.
+            </li>
+            <li>
+              Detects existing BLAST databases and automatically lists
+              them in the search interface.
+            </li>
+            <li>
+              Detects sequence type of FASTA files and prompts to turn
+              them into BLAST databases.
+            </li>
+            <li>
+              Built-in web server for light to medium usage. Can be
+              integrated with <a href="https://sequenceserver.com/doc/#apache">Apache</a> or <a href="https://sequenceserver.com/doc/#nginx">Nginx</a> if required.
+            </li>
+            <li>
+              Easily add <a href="https://sequenceserver.com/doc/#plugin">custom links</a> to search hits (e.g. to a <a href="https://sequenceserver.com/doc/#jbrowse">genome
+              browser</a> or a page describing the sequence).
+            </li>
+          </ul>
+
+        </div>	
+        <div class="col-md-4">
           <a href="img/overview/search.png">
             <img class="thumbnail" src="img/overview/search.png" style="width:100%; height: auto"
               alt="Screenshot of search interface." />
@@ -737,12 +703,17 @@
           </a>
         </strong>
         and we will work something out.
+      </p>
+      <p style="background-color:#ffcccc; font-weight: bold;">
+	Customers of the SequenceServer <a href="/cloud">Cloud BLAST service</a> have dedicated support streams.
+      </p>
+      <p>
         <strong>
           We are also available for consulting
         </strong>
         which can range from custom support to server deployment and
         administration to implementing specific features.
-        <a href="mailto:sequenceserver@gmail.com">
+        <a href="mailto:contact@sequenceserver.com">
           Get in touch</a>.
       </p>
     </section>
@@ -814,6 +785,7 @@
               Citations
             </h3>
           </div>
+	  <p>Scholar is typically the best place to find the <a href="https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1988041843760551302,5980610465470832900,4588167011929671798,10707512076571248813">most recent citations</a>. But we also have an outdated list here:</p>
           <ol reversed style="padding-left: 20px;">
             <!-- new citation begins -->
             <li>
