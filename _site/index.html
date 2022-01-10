@@ -56,7 +56,7 @@
     <div class="container">
       <div class="brand-container">
         <a class="navbar-brand navbar-left" href="/"><img class="logo" src="/img/logos/SequenceServer_logo.png"
-							  alt="sequenceserver_logo">&nbsp;<span>1.0.14</span></a>
+							  alt="sequenceserver_logo">&nbsp;<span>2.0.0</span></a>
 	</br><a class="navbar-brand-made-by" href="//wurmlab.com">
           by Wurmlab @ Queen Mary University of London
         </a>
@@ -416,10 +416,11 @@
 
   <div class="main col-lg-9">
     <section id="about">
-      <div class="page-header">
-        <h1><small>
+      <div class="page-header" style="margin-top: 10px;">
+        <h1>
+          <small>
             BLAST search made easy!
-	  </small>
+          </small>
         </h1>
       </div>
       <div class="row">
@@ -456,212 +457,216 @@
             sustainable software development philosophy.
           </p>
 
-          <h2>
-              Optimal searching &amp; interpretation
-          </h2>
-
-          <ul>
+          <div class="page-header">
+            <h3>
+              Key features
+            </h3>
+          </div>
+          <ul style="padding-left: 20px;">
             <li>
-              Type or paste query sequences, or drag-and-drop a FASTA
-              file to search.
+              Automated setup, including BLAST+ download and converting FASTA
+              files into BLAST databases.
             </li>
             <li>
-              Smart user interface automagically figures out the
-              appropriate BLAST method for the given query and
-              selected databases.
+              Smart user interface automatically selects the appropriate
+              BLAST method for the given query and selected databases.
             </li>
             <li>
-              Use advanced parameters as you would in the command line:
-              <code>-evalue 1.0e-10 -max_target_seqs 10</code>.
-            </li>
-            <li>
-              Several <a href="/blog/visualizing_blast_results/">graphical overview of BLAST results</a> help to understand the biology. 
-            </li>
-            <li>
-              GenBank style visualisation of hit sequences - residues
-              grouped in multiples of five.
-            </li>
-            <li>
-              Download hit sequences in FASTA format, and alignment
-              data in tab-delimited and XML format for further
-              analysis.
-            </li>
-            <li>
-              Step-by-step discovery of workflow and options through
-              interactive, visual feedback.
-            </li>
-          </ul>
-
-
-            <h2>
-              Rapidly deployed
-	      </h2>
+              Visualise each level of BLAST output:
               <ul>
-            <li>
-              Automatically detects BLAST software - if absent the
-              correct version is automatically downloaded.
+                <li>
+                  <a href="https://github.com/nicgirault/circosJS">Circos-style</a>
+                  plot of queries and their top hit, helpful for visually testing
+                  for conserved synteny or gene duplication.
+                </li>
+                <li>
+                  Length distribution (histogram) of all hits of a query, helpful
+                  for quality-assessment of gene predictions. This is inspired
+                  from our work with
+                  <a href="https://academic.oup.com/bioinformatics/article/32/10/1559/1742817">
+                    GeneValidator
+                  </a>
+                </li>
+                <li>
+                  <a href="https://academic.oup.com/bioinformatics/article/31/8/1305/212772">Kablammo visualisation</a> for <strong>each query-hit pair</strong> indicates clearly which parts of the query match which part of the hits.
+                </li>
+              </ul>
             </li>
             <li>
-              Detects existing BLAST databases and automatically lists
-              them in the search interface.
+              Visualise pre-generated BLAST results or output of DIAMOND.
             </li>
             <li>
-              Detects sequence type of FASTA files and prompts to turn
-              them into BLAST databases.
+              Share the results with colleagues or bookmark the page and return
+              to it at a later date.
             </li>
             <li>
-              Built-in web server for light to medium usage. Can be
-              integrated with <a href="https://sequenceserver.com/doc/#apache">Apache</a> or <a href="https://sequenceserver.com/doc/#nginx">Nginx</a> if required.
+              Download hit sequences or matching regions in FASTA format, or all
+              alignment data in tab-delimited or XML format for further analysis.
             </li>
             <li>
-              Easily add <a href="https://sequenceserver.com/doc/#plugin">custom links</a> to search hits (e.g. to a <a href="https://sequenceserver.com/doc/#jbrowse">genome
-              browser</a> or a page describing the sequence).
+              Easily add custom links to search hits (e.g. to a genome
+              browser or a page describing the sequence).
+            </li>
+            <li>
+              Support for long-running BLAST searches, for rendering large BLAST
+              results (thousands of hits), and for integrating as part of other
+              websites.
             </li>
           </ul>
 
-        </div>	
-        <div class="col-md-4">
-          <a href="img/overview/search.png">
-            <img class="thumbnail" src="img/overview/search.png" style="width:100%; height: auto"
-              alt="Screenshot of search interface." />
-          </a>
-          <p class="text-center">
-            Screenshot: Search interface
-          </p>
-          <br>
-          <a href="https://sequenceserver.com/paper/resultsinteractive/">
-            <img class="thumbnail" src="img/overview/result.png" style="width:100%; height: auto"
-              alt="Screenshot of result interface." />
-          </a>
-          <p class="text-center">
-            Screenshot: Result interface
-          </p>
-          <br>
-          <a href="img/overview/setup.png">
-            <img class="thumbnail" src="img/overview/setup.png" style="width:100%; height: auto" alt="Setup process." />
-          </a>
-          <p class="text-center">
-            Screenshot: Setup process
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Installation ================================================== -->
-    <section id="installation">
-      <div class="page-header">
-        <h2>
-          Installation
-        </h2>
-      </div>
-      <div class="alert alert-info" role="alert">
-        <p><strong><a href="/cloud/">SequenceServer Cloud: point click hosted BLAST servers</a></strong></p>
-        <p>Installing SequenceServer is straightforward on most UNIX systems (see below). However, this isn't for
-          everyone. </p>
-
-        <ul>
-          <li>Perhaps you lack the infrastructure or would <strong>prefer a point-and-click setup</strong>.</li>
-          <li>Or you want SequenceServer BLAST to <strong>run faster</strong> at a reasonable cost. </li>
-          <li>Or want to be able to <strong>perform BLAST searches from anywhere</strong>, without having to worry about
-            IPs, ports or power outages. </li>
-          <li>Or you simply want to benefit from the greatest SequenceServer features <strong>without the hassle of
-              running and updating</strong> a server.</li>
-        </ul>
-        <p>Having spent 15 years running BLAST servers, we have now created <a href="/cloud/">SequenceServer Cloud</a>.
-          A hassle-free, secure and cost-effective solution for labs, institutions and individuals. <a
-            href="/cloud/">Find out more</a>.</p>
-      </div>
-
-      <div class="page-header">
-        <h3 id="requirements">
-          Requirements for local installation
-        </h3>
-      </div>
-      <ul style="padding-left: 20px;">
-        <li>
+          <!-- Installation ================================================== -->
+          <div id="installation" style="padding-top: 50px; margin-top: -50px;">
+          <div class="page-header">
+            <h3>
+              Requirements for local installation
+            </h3>
+          </div>
+          <ul style="padding-left: 20px;">
+            <li>
+              <strong> Linux or Mac </strong> and <strong><a
+                  href="http://ruby-lang.org">Ruby</a> (&ge;
+                2.3; preferably &ge; 2.5)</strong>
+            </li>
+            <li>
+              <a
+                href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/">
+                NCBI BLAST+
+              </a> (2.10.0+) is interactively downloaded if absent
+            </li>
+            <li>
+              <p>
+                One of SequenceServer's dependencies (the module used to parse BLAST's
+                XML output) compiles some C code as part of the installation process.
+                This means that the standard Unix build tools (e.g., <code>gcc</code>,
+                <code>make</code>) are required to install SequenceServer. On a Mac,
+                this means having Xcode and CLI tools for Xcode installed. On Ubuntu
+                and other Debian-based Linux systems, you would have to install the
+                <code>ruby-dev</code> and <code>build-essential</code> packages in
+                addition to <code>ruby</code>.
+              </p>
+            </li>
+            <li>
+              <strong>Alternatively</strong>, just install <a
+              href="docker.com">Docker</a> and use it to run SequenceServer
+              whether on Linux, on Mac, or on Windows.
+            </li>
+          </ul>
+          <div class="page-header" style="margin-top: 30px;">
+            <h3>
+              Install or update
+            </h3>
+          </div>
           <p>
-            <strong> Linux or Mac </strong> and <strong><a href="http://www.ruby-lang.org">Ruby</a> (&ge;
-              1.8.7; preferably &ge; 2.0)</strong>
+            Once you have Ruby and the build tools installed, or Docker, the
+            commands below can be used to install SequenceServer for the first
+            time. Later on, the same command can be used to update SequenceServer
+            to the latest version:
           </p>
-        </li>
-        <li>
-          <p>
-            <a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/">
-              NCBI BLAST+
-            </a> (2.2.31+) is interactively downloaded if absent
-          </p>
-        </li>
-        <li>
-          <p>
-            One of SequenceServer's dependencies (the module used to parse BLAST's
-            XML output) compiles some C code as part of the installation process.
-            This means that the standard Unix build tools (e.g., <code>gcc</code>,
-            <code>make</code>) are required to install SequenceServer. On a Mac,
-            this means having Xcode and CLI tools for Xcode installed. On Ubuntu
-            and other Debian-based Linux systems, you would have to install the
-            <code>ruby-dev</code> and <code>build-essential</code> packages in
-            addition to <code>ruby</code>.
-          </p>
-        </li>
-      </ul>
-      <div class="page-header">
-        <h3 id="quick-setup">
-          Install or update
-        </h3>
-      </div>
-      <p>
-        Once you have Ruby and the build tools installed, the command below
-        can be used to install SequenceServer. Later on, the same command
-        can be used to update SequenceServer to the latest version:
-      </p>
 
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>gem <span class="nb">install </span>sequenceserver</code></pre></figure>
 
-      <div class="page-header">
-        <h3>
-          Configure and run
-        </h3>
-      </div>
-      <p>
-        Run the following in a terminal to configure and run SequenceServer. It
-        will automatically download NCBI BLAST+ if absent, ask for the location
-        of directory containing database sequences, format FASTA files for use
-        with BLAST+, and list them for use in the search form:
-      </p>
+          <p>
+          If using Docker:
+          </p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">docker fetch wurmlab/sequenceserver</code></pre></figure>
+
+          <div class="page-header">
+            <h3 style="margin-top: 30px;">
+              Configure and run
+            </h3>
+          </div>
+          <p>
+            Run the following in a terminal to configure and run SequenceServer. It
+            will automatically download NCBI BLAST+ if absent, ask for the location
+            of directory containing database sequences, format FASTA files for use
+            with BLAST+, and list them for use in the search form:
+          </p>
 <figure class="highlight"><pre><code class="language-shell" data-lang="shell">sequenceserver</code></pre></figure>
-      <p>
-        That's it! Open <a href="http://localhost:4567/">
-          http://localhost:4567</a> in your web-browser and start BLAST-ing!
-      </p>
-      <br>
-      <div id="cite" style="margin-left: 20px;">
-        <h4>
-          Please cite
-        </h4>
-        <blockquote>
-          <a href="https://doi.org/10.1093/molbev/msz185">
-            Sequenceserver: a modern graphical user interface for custom
-            BLAST databases. Molecular Biology and Evolution (2019).
-          </a>
-        </blockquote>
-        <p>
-          We request you to not remove the please cite line from your installation of SequenceServer. Citations are
-          important for us to actively develop and advance SequenceServer.
+          <p>
+            If using Docker, you need to provide the databases directory up-front:
+          </p>
+<pre>docker run --rm -itp 4567:4567 -v /path-to-database-dir:/db wurmlab/sequenceserver:1.0.11</pre>
+          <p>
+            That's it! Open <a href="http://localhost:4567/">
+              http://localhost:4567</a> in your web-browser and start BLAST-ing!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-5" >
+        <a href="img/overview/search.png">
+          <img class="thumbnail"
+          src="img/overview/search.png" style="width:100%; height: auto" alt="Screenshot of search interface."/>
+        </a>
+        <p class="text-center">
+          Screenshot: Search interface
+        </p>
+        <br>
+        <a href="img/overview/result.png">
+          <img class="thumbnail"
+          src="img/overview/result.png" style="width:100%; height: auto" alt="Screenshot of result interface."/>
+        </a>
+        <p class="text-center">
+          Screenshot: Result interface
+        </p>
+        <br>
+        <a href="img/overview/circos.png">
+          <img class="thumbnail"
+          src="img/overview/circos.png" style="width:100%; height: auto" alt="Screenshot of circos visualisation."/>
+        </a>
+        <p class="text-center">
+          Screenshot: Circos-style visualisation showing conserved synteny and rearrangement between genomes of two species.
+        </p>
+        <br>
+        <a href="img/overview/length-distribution.png">
+          <img class="thumbnail"
+          src="img/overview/length-distribution.png"
+          style="width:100%; height: auto" alt="Screenshot of length distribution visualisation."/>
+        </a>
+        <p class="text-center">
+          Screenshot: Length distribution of hits showing that the query (a predicted gene product) is longer compared to similar database sequences.
+        </p>
+        <br>
+        <a href="img/overview/Kablammo-NC_014672_1-tig00002561.png">
+          <img class="thumbnail"
+          src="img/overview/Kablammo-NC_014672_1-tig00002561.png" style="width:100%; height: auto" alt="Screenshot of Kablammo visualisation"/>
+        </a>
+        <p class="text-center">
+          Screenshot: Kablammo visualisation showing a mis-assembled genomic sequence.
+        </p>
+        <br>
+        <a href="img/overview/setup.png">
+          <img class="thumbnail"
+          src="img/overview/setup.png" style="width:100%; height: auto" alt="Setup process."/>
+        </a>
+        <p class="text-center">
+          Screenshot: Setup process
         </p>
       </div>
-      <div class="page-header">
-        <h3>
-          Using with Docker
-        </h3>
-      </div>
-      <p>
-        Alternatively, you can use SequenceServer with
-        <a href="https://www.sequenceserver.com/doc">
-          Docker
-        </a> - only need to specify the location of your database directory.
-      </p>
-      <pre>docker run --rm -itp 4567:4567 -v /path-to-database-dir:/db wurmlab/sequenceserver:1.0.11</pre>
-    </section>
+    </div>
+  </section>
+
+  <!-- SequenceServer Cloud banner ================================================== -->
+  <br/>
+  <br/>
+  <div class="alert alert-info" role="alert">
+    <p><strong><a href="/cloud/">SequenceServer Cloud: point click hosted BLAST servers</a></strong></p>
+    <p>Installing SequenceServer is straightforward on most UNIX systems. However, this isn't for
+      everyone. </p>
+  
+    <ul>
+      <li>Perhaps you lack the infrastructure or would <strong>prefer a point-and-click setup</strong>.</li>
+      <li>Or you want SequenceServer BLAST to <strong>run faster</strong> at a reasonable cost. </li>
+      <li>Or want to be able to <strong>perform BLAST searches from anywhere</strong>, without having to worry about
+        IPs, ports or power outages. </li>
+      <li>Or you simply want to benefit from the greatest SequenceServer features <strong>without the hassle of
+          running and updating</strong> a server.</li>
+    </ul>
+    <p>Having spent 15 years running BLAST servers, we have now created <a href="/cloud/">SequenceServer Cloud</a>.
+      A hassle-free, secure and cost-effective solution for labs, institutions and individuals. <a href="/cloud/">Find out
+        more</a>.</p>
+  </div>
 
     <!-- License ================================================== -->
     <section id="license">
@@ -684,6 +689,20 @@
         </a>
         if in doubt. Our licensing model is same as theirs.
       </p>
+      <div id="cite">
+        <h4>
+          Please cite
+        </h4>
+        <blockquote>
+          <a href="https://doi.org/10.1093/molbev/msz185">
+            Sequenceserver: a modern graphical user interface for custom
+            BLAST databases. Molecular Biology and Evolution (2019).
+          </a>
+        </blockquote>
+        <p>
+          We request you to not remove the please cite line from your installation of SequenceServer. Citations are important for us to actively develop and advance SequenceServer.
+        </p>
+      </div>
     </section>
 
     <!-- Support ================================================== -->
@@ -1127,6 +1146,120 @@
             </li>
 
             <!-- new citation begins -->
+            <li>
+              Zhang (2020)
+              <a href="https://www.sciencedirect.com/science/article/pii/S0378111920310477">
+                NBIGV-DB: a dedicated database of non-B cell derived immunoglobulin variable region</a>.
+              Gene.
+            </li>
+            <li>
+              Swann (2020)
+              <a href="https://science.sciencemag.org/content/early/2020/07/29/science.aaz9445.abstract">
+                The immunogenetics of sexual parasitism</a>.
+              Science.
+            </li>
+            <li>
+              Colin (2020)
+              <a href="https://www.nature.com/articles/s41467-020-15777-w">
+                The chloroalkaloid (−)-acutumine is biosynthesized via a Fe(II)- and 2-oxoglutarate-dependent halogenase in Menispermaceae plants</a>.
+              Nature Communications.
+            </li>
+            <li>
+              Li (2020)
+              <a href="https://genome.cshlp.org/content/30/6/924.short">
+                Dynamic transcriptional and chromatin accessibility landscape of medaka embryogenesis</a>.
+              Genome Research.
+            </li>
+            <li>
+              Yañez-Guerra (2020)
+              <a href="https://elifesciences.org/articles/57640">
+                Echinoderms provide missing link in the evolution of PrRP/sNPF-type neuropeptide signalling</a>.
+              eLife.
+            </li>
+            <li>
+              Hart (2020)
+              <a href="https://academic.oup.com/mbe/article/37/3/811/5625936">
+                Visual Opsin Diversity in Sharks and Rays</a>.
+              Molecular Biology and Evolution.
+            </li>
+            <li>
+              Gauthier (2020)
+              <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/mec.15403">
+                Contrasting genomic and phenotypic outcomes of hybridization between pairs of mimetic butterfly taxa across a suture zone</a>.
+              Molecular Ecology.
+            </li>
+            <li>
+              Dallinger (2020)
+              <a href="https://pubs.rsc.org/no/content/articlehtml/2020/mt/c9mt00259f">
+                Metallomics reveals a persisting impact of cadmium on the evolution of metal-selective snail metallothioneins</a>.
+              Metallomics.
+            </li>
+            <li>
+              Koch (2020)
+              <a href="https://www.nature.com/articles/s41598-020-57526-5">
+                Genomic, metabolic and phenotypic variability shapes ecological differentiation and intraspecies interactions of <em>Alteromonas macleodii</em></a>.
+              Scientific Reports.
+            </li>
+            <li>
+              Gui (2020)
+              <a href="https://www.sciencedirect.com/science/article/pii/S2589004220304260">
+                ZEAMAP, a Comprehensive Database Adapted to the Maize Multi-Omics Era</a>.
+              iScience.
+            </li>
+            <li>
+              Wu (2020)
+              <a href="https://academic.oup.com/database/article/doi/10.1093/database/baaa001/5809233">
+                PncStress: a manually curated database of experimentally validated stress-responsive non-coding RNAs in plants</a>.
+              Database.
+            </li>
+            <li>
+              Moreland (2020)
+              <a href="https://academic.oup.com/database/article/doi/10.1093/database/baaa029/5834871">
+                The <em>Mnemiopsis</em> Genome Project Portal: integrating new gene expression resources and improving data visualization</a>.
+              Database.
+            </li>
+            <li>
+              Yu (2020)
+              <a href="https://academic.oup.com/database/article/doi/10.1093/database/baaa051/5866012">
+                SAGER: a database of Symbiodiniaceae and Algal Genomic Resource</a>.
+              Database.
+            </li>
+            <li>
+              Reichler (2020)
+              <a href="https://www.sciencedirect.com/science/article/pii/S0022030220304136">
+                Interventions designed to control postpasteurization contamination in high-temperature, short-time-pasteurized fluid milk processing facilities: A case study on the effect of employee training, clean-in-place chemical modification, and preventive maintenance programs</a>.
+              Journal of Dairy Science.
+            </li>
+            <li>
+              Wang (2020)
+              <a href="https://www.frontiersin.org/articles/10.3389/fgene.2020.00378/full">
+                Coexpression Analysis Reveals Dynamic Modules Regulating the Growth and Development of Cirri in the Rattans (<em>Calamus simplicifolius</em> and <em>Daemonorops jenkinsiana</em>)</a>.
+              Frontiers in Genetics.
+            </li>
+            <li>
+              Triant (2020)
+              <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/age.12962">
+                Using online tools at the Bovine Genome Database to manually annotate genes in the new reference genome</a>.
+              Animal Genetics.
+            </li>
+            <li>
+              Goodheart (2020)
+              <a href="https://www.nature.com/articles/s41598-020-67209-w">
+                Laboratory culture of the California Sea Firefly <em>Vargula tsujii</em> (Ostracoda: Cypridinidae): Developing a model system for the evolution of marine bioluminescence</a>.
+              Scientific Reports.
+            </li>
+            <li>
+              Waterhouse (2020)
+              <a href="https://link.springer.com/protocol/10.1007/978-1-0716-0259-1_1">
+                Characterization of Insect Immune Systems from Genomic Data</a>.
+                Immunity in Insects. Springer Protocols Handbooks.
+            </li>
+            <li>
+              Singh (2020)
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-21270-4_3">
+                Overview of Genomic Resources Available for Lupins with a Focus on Narrow-Leafed Lupin (<em>Lupinus angustifolius</em>)</a>.
+                The Lupin Genome. Compendium of Plant Genomes. Springer, Cham.
+            </li>
             <li>
               Alves (2020)
               <a href="https://www.sciencedirect.com/science/article/abs/pii/S019188691930649X">
@@ -1894,6 +2027,12 @@
                 modified organisms</a>. Joint Research Centre, European Union
               Reference Laborator for GM Food and Feed.
             </li>
+            <!-- <li>
+              <a href="http://geve.med.u-tokai.ac.jp">
+                Genome-based Endogenous Viral Element (gEVE) Database</a>,
+              Biomedical Informatics Laboratory, Tokai University School of
+              Medicine
+            </li> -->
             <li>
               <a href="http://phi-blast.phi-base.org/">Pathogen-Host
                 Interactions database (PHI-base)</a>. Rothamsted Research, UK.
