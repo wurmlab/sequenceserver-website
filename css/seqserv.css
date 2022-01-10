@@ -177,8 +177,7 @@ a:hover {
 }
 
 .page-header {
-  margin: 20px 0 5px 0;
-  padding-bottom: 4px;
+  margin: 10px 0;
 }
 
 .page-header>h1, .page-header>h2, .page-header>h3 {

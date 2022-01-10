@@ -5,9 +5,6 @@ description: Detailed documentation indicating how to set up SequenceServer for 
 keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local NCBI BLAST, custom BLAST, BLAST web server, local BLAST
 ---
 <div class="row">
-      <h1 style="font-size: 22pt;">Configuring and customizing a SequenceServer BLAST installation for your local PC or compute server</h1>
-</div>
-<div class="row">
   <div class="sidebar col-md-3 d-none d-lg-block">
     <nav class="index sticky-top" style="top:90px;" data-spy="affix" data-offset-top="0" data-offset-bottom="180">
       <ul class="nav nav-pills nav-stacked">
@@ -131,9 +128,10 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
   </div> <!-- sidebar -->
 
   <div class="main col-lg-9">
+    <h1 style="font-size: 22pt;">Configuring and customizing a SequenceServer BLAST installation for your local PC or compute server</h1>
     <!-- Installation directory -->
     <section id="installation-directory">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Where is SequenceServer installed?
         </h2>
@@ -153,7 +151,7 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
 
     <!-- Basics of configurating SequenceServer -->
     <section id="basics">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Basics of configuring SequenceServer
         </h2>
@@ -399,7 +397,7 @@ sequenceserver -s -b /path/to/latest/blast/binaries
 
     <!-- Creating BLAST databases -->
     <section id="create-database">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Creating BLAST databases
         </h2>
@@ -478,7 +476,7 @@ Enter taxid (optional): 13686
 
     <!-- Upgrading BLAST databases -->
     <section id="upgrade-database">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Upgrading BLAST databases
         </h2>
@@ -509,7 +507,7 @@ Enter taxid (optional): 13686
 
     <!-- Using BLAST databases from NCBI -->
     <section id="ncbi-databases">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Using BLAST databases from NCBI
         </h2>
@@ -544,7 +542,7 @@ ncbi-blast-dbs nt nr
 
     <!-- Taxonomy data -->
     <section id="taxonomy">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Taxonomy of matching sequences
         </h2>
@@ -580,7 +578,7 @@ ncbi-blast-dbs nt nr
 
     <!-- Advanced BLAST options -->
     <section id="advanced-params">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Advanced BLAST options
         </h2>
@@ -621,7 +619,7 @@ ncbi-blast-dbs nt nr
 
     <!-- JBrowse -->
     <section id="jbrowse">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Integrating with JBrowse
         </h2>
@@ -637,7 +635,7 @@ ncbi-blast-dbs nt nr
 
     <!-- Plugin -->
     <section id="plugin">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Adding links to search hits
         </h2>
@@ -683,7 +681,7 @@ ncbi-blast-dbs nt nr
 
     <!-- Sharing -->
     <section id="sharing">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Sharing with colleagues
         </h2>
@@ -716,7 +714,7 @@ ncbi-blast-dbs nt nr
 
     <!-- Autostart with systemd ============================================== -->
     <section id="autostart-systemd">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Autostart with systemd
         </h2>
@@ -770,7 +768,7 @@ systemctl start sequenceserver.service
 
     <!-- Autostart on Ubuntu / Bio Linux =================================== -->
     <section id="ubuntu">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Autostart on Ubuntu / Bio Linux
         </h2>
@@ -809,7 +807,7 @@ sudo start sequenceserver
 
     <!-- Autostart on Mac OS X ============================================== -->
     <section id="macosx">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Autostart on Mac OS X
         </h2>
@@ -849,7 +847,7 @@ launchctl load ~/Library/LaunchAgents/sequenceserver
 
     <!-- Apache -->
     <section id="apache">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Integrating with Apache
         </h2>
@@ -910,7 +908,7 @@ SequenceServer.init :config_file => "/home/foo/.sequenceserver.conf"
 
     <!-- Nginx -->
     <section id="nginx">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Reverse proxy setup with Nginx
         </h2>
@@ -1146,7 +1144,7 @@ end
 
     <!-- Other frequently asked questions =============================================== -->
     <section id="faq">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Other frequently asked questions (FAQ)
         </h2>
@@ -1187,7 +1185,7 @@ end
 
     <!-- Understanding BLAST =============================================== -->
     <section id="blast">
-      <div class="page-header" style="margin-top: 20px;">
+      <div class="page-header">
         <h2>
           Understanding BLAST
         </h2>
