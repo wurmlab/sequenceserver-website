@@ -22,8 +22,13 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
           </a>
         </li>
         <li role="presentation">
-          <a href="#database">
+          <a href="#create-database">
             Creating BLAST databases
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#upgrade-database">
+            Upgrading BLAST databases
           </a>
         </li>
         <li role="presentation">
@@ -92,6 +97,16 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
           </a>
         </li>
         <li role="presentation">
+          <a href="#iframe">
+            Embedding SequenceServer
+          </a>
+        </li>
+        <li role="presentation">
+          <a href="#iframe">
+            Using SequenceServer's API
+          </a>
+        </li>
+        <li role="presentation">
           <a href="#debugging">
             Debugging SequenceServer
           </a>
@@ -145,13 +160,15 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
       </div>
       <p>
         SequenceServer requires the location of NCBI BLAST+ binaries and the
-        location of database sequences (either in FASTA or BLAST+ database
-        format) to run, and can be specified to SequenceServer using command
-        line parameters or through a configuration file. SequenceServer looks
-        for a configuration file by default at
+        location of database sequences (either in FASTA or BLAST database
+        format) to run. These can be specified using command line parameters
+        or through a configuration file.
+
+        SequenceServer looks for a configuration file by default at
         <code>~/.sequenceserver.conf</code>. This can be changed by
         using the <code>-c</code> option:
         <code>sequenceserver -c ~/.sequenceserver.ants.conf</code>.
+
       </p>
       <p>
         Configuration files have a simple key-value syntax and can be viewed
@@ -181,7 +198,7 @@ sequenceserver -s -b /path/to/latest/blast/binaries
             <th>
               Command line
             </th>
-            <th>
+            <th style="width: 65%;">
               Description
             </th>
           </tr>
@@ -222,6 +239,49 @@ sequenceserver -s -b /path/to/latest/blast/binaries
           </tr>
           <tr>
             <td>
+              :job_lifetime:
+            </td>
+            <td>
+            </td>
+            <td>
+              How long to keep search results for (in minutes).
+            </td>
+          </tr>
+          <tr>
+            <td>
+              :options:
+            </td>
+            <td>
+            </td>
+            <td>
+              Predefined search options for different BLAST algorithms.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              :frame_options:
+            </td>
+            <td>
+            </td>
+            <td>
+              Access options for embedding SequenceServer in an iframe. Possible
+              values <code>:deny</code>, <code>:sameorigin</code>, or
+              <code>'ALLOW-FROM uri'</code>.
+            </td>
+          </tr>
+          <tr>
+            <td>
+              :require:
+            </td>
+            <td>
+              -r / --require
+            </td>
+            <td>
+              Load extension from this file.
+            </td>
+          </tr>
+          <tr>
+            <td>
               :host:
             </td>
             <td>
@@ -240,17 +300,6 @@ sequenceserver -s -b /path/to/latest/blast/binaries
             </td>
             <td>
               Port to run SequenceServer on.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              :require:
-            </td>
-            <td>
-              -r / --require
-            </td>
-            <td>
-              Load extension from this file.
             </td>
           </tr>
         </tbody>
@@ -272,6 +321,14 @@ sequenceserver -s -b /path/to/latest/blast/binaries
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>
+              -x / --import
+            </td>
+            <td>
+              Import pre-generated BLAST/DIAMOND XML output for visualisation
+            </td>
+          </tr>
           <tr>
             <td>
               -c / --config_file
@@ -302,14 +359,6 @@ sequenceserver -s -b /path/to/latest/blast/binaries
             </td>
             <td>
               List found BLAST databases
-            </td>
-          </tr>
-          <tr>
-            <td>
-              -u / --list-unformatted-fastas
-            </td>
-            <td>
-              List unformatted FASTA files
             </td>
           </tr>
           <tr>
@@ -348,8 +397,8 @@ sequenceserver -s -b /path/to/latest/blast/binaries
       </table>
     </section>
 
-    <!-- BLAST databases -->
-    <section id="database">
+    <!-- Creating BLAST databases -->
+    <section id="create-database">
       <div class="page-header" style="margin-top: 20px;">
         <h2>
           Creating BLAST databases
@@ -365,30 +414,96 @@ sequenceserver -s -b /path/to/latest/blast/binaries
       <pre>makeblastdb -dbtype &lt;prot_or_nucl&gt; -title &lt;human_readable_name&gt; -in &lt;path_to_fasta&gt; -parse_seqids</pre>
 
       <p>
-        SequenceServer can recursively scan a directory for FASTA files,
-        identify whether the file contains nucleotide or amino acid sequences
-        and prompt you to convert them into BLAST databases. It even suggests
-        a suitable name for the BLAST database by cleaning up FASTA file name.
-        SequenceServer automatically does this when it does not find any BLAST
-        database in <code>database_dir</code>. Rest of the times you can/ will
-        need to invoke it manually, e.g., after adding new FASTA files to
+        SequenceServer's <code>makeblastdb</code> wrapper can recursively scan a
+        directory for FASTA files and prompt you to convert them into BLAST
+        databases. SequenceServer automatically determines whether the file
+        contains nucleotide or amino acid sequences so you don't have to specify
+        it yourself and suggests a human readable name by "cleaning" the FASTA
+        file name.
+      </p>
+
+      <p>
+        SequenceServer does this automatically when it does not find any BLASTDB
+        files in <code>database_dir</code>. Rest of the times you can invoke
+        this functionality manually, such as after adding new FASTA files to
         <code>database_dir</code>.
       </p>
 
       <pre>sequenceserver -m</pre>
 
       <p>
-        An alternative directory can be provided:
+        The above command reads <code>database_dir</code> from the default
+        configuration file(<code>~/.sequenceserver.conf</code>), but that
+        can be changed:
       </p>
 
       <pre>sequenceserver -m -d /path/to/directory_with_fasta_files
 sequenceserver -m -c /path/to/config_file_containing_database_dir</pre>
 
       <p>
+        If you would like to include taxonomy id of sequences in the database,
+        you can do so by including <code>.taxid_map.txt</code> file next to the
+        FASTA file. For example, if your FASTA file is
+        <code>/database_dir/ants.fa</code>, the taxid map file must be called
+        <code>/database_dir/ants.taxid_map.txt</code>. If you have this file,
+        SequenceServer will automatically use it with
+        <code>-taxid_map</code> option of <code>makeblastdb</code>. The file is
+        expected to contain a sequence id and a taxonomy id on each line.
+      </p>
+
+      <p>
+        If you do not have this file, SequenceSever will prompt you to enter one
+        taxonomy id that can be used for all sequences in the FASTA file. You
+        can get the taxonomy id of a species at <a
+        href="http://www.ncbi.nlm.nih.gov/taxonomy">NCBI Taxonomy browser</a>.
+      </p>
+
+      <p>An example prompt:</p>
+
+<pre>
+FASTA file: /Users/priyam/biodb/protein/Solenopsis_invicta/SI2.2.3.fa
+FASTA type: protein
+Proceed? [y/n] (Default: y):
+Enter a database title or will use 'SI 2.2.3 ':
+Enter taxid (optional): 13686
+</pre>
+
+      <p>
         <a href="https://github.com/ar0ch">Aroon Chande</a> has put together a
         <a href="https://gist.github.com/ar0ch/2efb5d86ed3b7165443326cec52f2637">
           script</a> to automatically create BLASTDBs and restart
         SequenceServer when a FASTA file is added to database directory.
+      </p>
+    </section>
+
+    <!-- Upgrading BLAST databases -->
+    <section id="upgrade-database">
+      <div class="page-header" style="margin-top: 20px;">
+        <h2>
+          Upgrading BLAST databases
+        </h2>
+      </div>
+      <p>
+        NCBI has introduced a new BLAST database format, called version 5. If
+        you have a mix of the old, version 4, and version 5 databases in your
+        databases directory, it can cause unexpected problems. Furthermore,
+        for features like FASTA download to work correctly, it is important
+        that BLAST databases are created using the <code>-parse_seqids</code>
+        option of <code>makeblastdb</code>.
+
+      </p>
+      <p>
+        SequenceServer checks for such incompatibilities automatically on
+        startup and offers to upgrade problematic databases. This works even
+        if you have lost the original FASTA file from which the database was
+        created. Human readable database name and taxonomy identifiers in the
+        datbases are preserved during the upgrade. Note that you may find
+        intermediate FASTA and taxid map files in the databases directory
+        after upgrading databases.
+      </p>
+      <p>
+        You can also invoke this functionality by running <code>sequenceserver
+        -m</code>.
       </p>
     </section>
 
@@ -431,53 +546,36 @@ ncbi-blast-dbs nt nr
     <section id="taxonomy">
       <div class="page-header" style="margin-top: 20px;">
         <h2>
-          Getting taxonomy data from BLAST
+          Taxonomy of matching sequences
         </h2>
       </div>
       <p>
-        BLAST can output scientific names, common names, BLAST names, and
-        kingdoms for each hit in tabular output. For this to work, databases
-        should be created with <code>-taxid</code> option of
-        <code>makeblastdb</code> and NCBI "taxdb" must be locatable on your
-        machine by BLAST. This can be helpful when BLAST-ing against several
-        species, using NR database for example. SequenceServer 1.0.4 onwards
-        it is possible to get this taxonomy data in the full tabular report
-        download option.
+        SequenceServer automatically includes scientific name of the species in
+        its HTML report. All taxonomy data returned by BLAST is provided in the
+        "Full tabular report" download option. For this to work, BLAST database
+        files should contain taxonomy id of the sequences and you must have
+        downloaded NCBI "taxdb".
+      </p>
+
+      <p>
+        See "Creating BLAST databases" section for how to include taxonomy
+        information in BLASTDB files. If you are using BLAST databases
+        downloaded from NCBI then you don't need to worry about this -
+        taxonomy information is included in the database files.
       </p>
 
       <p>
         To download NCBI taxdb, run:
       </p>
-      <pre>
+
+<pre>
 <code>sequenceserver --download-taxdb</code>
 </pre>
 
       <p>
-        If you are using NR database, that's all you need to do. If you are
-        using your own database, you will have to tell SequenceServer "taxid"
-        of the sequences contained in the FASTA file. First remove existing
-        BLAST databases. Then
-        run,
+        The above command downloads taxdb files to <code>~/.sequenceserver</code>,
+        where SequenceServer keeps a few other files as well.
       </p>
-
-      <pre>
-<code>sequenceserver -m</code>
-</pre>
-
-      <p>
-        Enter taxid when prompted. You can get the taxid by searching for the
-        species name at <a href="http://www.ncbi.nlm.nih.gov/taxonomy">NCBI
-          Taxonomy browser</a>.
-        For example,
-      </p>
-
-      <pre>
-FASTA file: /Users/priyam/biodb/protein/Solenopsis_invicta/SI2.2.3.fa
-FASTA type: protein
-Proceed? [y/n] (Default: y):
-Enter a database title or will use 'SI 2.2.3 ':
-<strong>Enter taxid (optional): 13686</strong>
-</pre>
     </section>
 
     <!-- Advanced BLAST options -->
@@ -495,10 +593,29 @@ Enter a database title or will use 'SI 2.2.3 ':
         <code>-outfmt</code>, <code>-import_search_strategy</code>) are
         not allowed.
       <p>
-
       <p>
         For security, only letters, numbers, space, hyphen, underscore,
         and period are allowed in "Advanced params" textbox.
+      </p>
+      <p>
+        SequenceServer changes BLAST+'s default:
+        <ul>
+          <li>
+            <code>-evalue 1e-5</code> is added to all searches
+          </li>
+          <li>
+            <code>-task blastn</code> is added to BLASTN searches
+          </li>
+        </ul>
+      </p>
+      <p>
+        The above changes are applied transparently, i.e., they are added to the
+        'Advanced params' textbox once you have pasted your query and selected
+        the databases and can be overriden.
+      </p>
+      <p>
+        It is possible to customise advanced options for each BLAST algorithm by
+        setting them in the configuration file.
       </p>
     </section>
 
@@ -572,12 +689,12 @@ Enter a database title or will use 'SI 2.2.3 ':
         </h2>
       </div>
       <p>
-        If your IP is publicly accessible, your colleagues will be able to
-        access your SequenceServer instance at http://your-ip:4567. You can
-        find your IP in the Network or Sharing section of System Preferences.
-        This usually requires being in the same subnetwork, or asking IT
-        services to open your machine to the outside world. You may also
-        want to ask IT services for a fixed IP.
+        If your IP is publicly accessible, your colleagues will be able to access
+        your SequenceServer instance at <code>http://your-ip:4567</code>, or a
+        particular search result at <code>http://your-ip:4567/job-id</code>. This
+        usually requires being in the same subnetwork, or asking IT services to
+        open your machine to the outside world. You may also want to ask IT
+        services for a fixed IP.
       </p>
       <p>
         If you already have a fixed, public IP but port 4567 is blocked by a
@@ -589,6 +706,11 @@ Enter a database title or will use 'SI 2.2.3 ':
         You can disable sharing
         by setting <code>:host:</code> key in config file to
         <code>127.0.0.1</code>: <code>sequenceserver -s -H 127.0.0.1</code>
+      </p>
+      <p>
+        BLAST results are stored for 30 days by default. You can change this by
+        setting the <code>:job_lifetime:</code> key in configuration file (the
+        value is specified in minutes).
       </p>
     </section>
 
@@ -882,8 +1004,9 @@ ssh hostname /usr/local/bin/$blast $param
         Using a job queuing system such as <code>qsub</code> may be a bit
         involved depending on the flexibility afforded by the system.
         Fortunately, we have a solution for <code>qsub</code> thanks
-        to <a href="https://groups.google.com/d/msg/sequenceserver/Ed05cYtHyPY/cMNYUxeaBQAJ">
-          Andy Foster</a>. Create the following script:
+        to <a href="https://groups.google.com/d/msg/sequenceserver/Ed05cYtHyPY/cMNYUxeaBQAJ">Andy Foster</a>
+        and <a href="https://github.com/wurmlab/sequenceserver/issues/445">Loraine Brillet-Guéguen</a>.
+        Create the following script:
       </p>
 
 {% highlight shell %}
@@ -898,23 +1021,78 @@ blast=$3
 
 shift 3
 
-param=`echo "$@" | sed "s/\-db\ /\-db\ \'/" | sed "s/\ \-query\ /\'\ \-query\ /"`
+param=`echo "$@" | sed "s/\-db\ /\-db\ \'/" | sed "s/\ \-query\ /\'\ \-query\ /" | sed "s/\-outfmt\ /\-outfmt\ \'/" | sed "s/\ \-num_threads\ /\'\ \-num_threads\ /"`
 
 qsub -sync y -b y -pe slowpara 4 -N $jobid -o $rfile -e $efile /usr/local/bin/$blast $param
 {% endhighlight %}
 
       <p>
-        And then modify L67 of <code>lib/sequenceserver/blast.rb</code> to
+        And add the following at line 51 of <code>lib/sequenceserver/blast/job.rb</code>:
       </p>
 
 {% highlight ruby %}
-system("/path/to/script #{rfile.path} #{efile.path} #{command}")
+def run
+  system("/path/to/script #{stdout} #{stderr} #{command}")
+end
 {% endhighlight %}
 
       <p>
         As above, <code>TMPDIR</code> environment variable must be set to a
         directory that's shared between both the machines, e.g., via a shared
         file system such as GPFS, NFS mount or SSHFS.
+      </p>
+    </section>
+
+    <!-- iframe -->
+    <section id="iframe">
+      <div ="page-header">
+        <h2>
+          Embedding SequenceServer in an iframe
+        </h2>
+      </div>
+      <p>
+        By default, any website can embed your SequenceServer installation via
+        iframe provided there is a public IP or URL pointing to it.
+      </p>
+      <p>
+        You can change this behaviour by setting <code>:frame_options:</code>
+        key in the config file:
+        <dl>
+          <dt>
+            :frame_options: :deny
+          </dt>
+          <dd>
+            Completely disable embedding in an iframe at all.
+          </dd>
+          <dt>
+            :frame_options: :sameorigin
+          </dt>
+          <dd>
+            Only allow websites hosted within the same domain to embed SequenceServer.
+          </dd>
+          <dt>
+            :frame_options: 'ALLOW-FROM my-url'
+          </dt>
+          <dd>
+            Only allow the webiste hosted at 'my-url' to embed SequenceServer. Of
+            course, 'my-url' is a website address that you provide.
+          </dd>
+        </dl>
+      </p>
+    </section>
+
+    <!-- API -->
+    <section id="api">
+      <div id="page-header">
+        <h2>
+          Using SequenceServer's API
+        </h2>
+      </div>
+      <p>
+        SequenceServer has a simple API that you can use to run BLAST searches
+        programatically. Thanks to Richard Adams, the API is documented at the
+        following link, including an example bash script to BLAST all
+        databases: <a href="api"><strong>SequenceServer API</strong></a>.
       </p>
     </section>
 
@@ -952,12 +1130,6 @@ system("/path/to/script #{rfile.path} #{efile.path} #{command}")
             exceeds 10,000 residues</strong> - ok if target sequences are
           proteins or contigs. We feel this mode of visualising sequences
           is not optimal for very long sequences (e.g., scaffolds).
-        </li>
-        <li>
-          <strong>Download FASTA of all hits and Download FASTA of selected
-            hits works only for 30 or less hits at a time.</strong> This is due
-          to a technical limitation that length of URLs should not exceed 2083
-          characters. This will be fixed in the next major release.
         </li>
         <li>
           <strong>During setup on some versions of OS X, an extra space is added
@@ -1003,8 +1175,14 @@ system("/path/to/script #{rfile.path} #{efile.path} #{command}")
           used. Also see: <a href="#jbrowse">Integrating with JBrowse</a>
           and <a href="#plugin">Adding links to search hits</a>.
         </dd>
+        <dt>
+          3. Is it possible to disable Grammarly for the query sequences?
+        </dt>
+        <dd>
+        Yes, but each user would have to do it themselves:
+        <a href="https://support.grammarly.com/hc/en-us/articles/115000091572-Disable-the-Grammarly-extension-in-a-certain-text-field">disable Grammarly</a>.
+        </dd>
       </dl>
-
     </section>
 
     <!-- Understanding BLAST =============================================== -->
