@@ -1,0 +1,129 @@
+<h2 id="sequenceserver-api">SequenceServer API</h2>
+
+<p>This document describes how to access SequenceServer functionality 
+programmatically using the command line.</p>
+
+<p>The documentation is based on version 2.0.0.rc4</p>
+
+<p>Example invocations use <code class="language-plaintext highlighter-rouge">curl</code> and <code class="language-plaintext highlighter-rouge">jq</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">$BASEURL</code> in the examples is the URL of your SequenceServer instance. E.g. http://localhost:4567 if you are running on default localhost URL.</p>
+
+<p>The accompanying script <a href="./blastnAllDbs.sh">blastnAllDbs.sh</a> is a working shell script to submit a BLAST job and get results.</p>
+
+<h2 id="getting--list-of-databases">Getting  list of databases</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET: /searchdata.json
+</code></pre></div></div>
+
+<p>In order to submit a Blast job, you have to know the IDs of the Blast databases. This endpoint retrieves information about the databases in JSON format.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl $BASEURL/searchdata.json | jq --raw-output '.database[].id'
+</code></pre></div></div>
+
+<p>The above command gets the IDs of the databases</p>
+
+<h2 id="submitting-a-query">Submitting a query</h2>
+
+<p>POST: /</p>
+
+<h3 id="form-parameters">Form parameters</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">method</code>. The name of the blast search to use (blastn, blastp, tblastn etc)</li>
+  <li><code class="language-plaintext highlighter-rouge">sequence</code> The query sequence</li>
+  <li><code class="language-plaintext highlighter-rouge">databases[]</code> One or more Ids of Blast databases to search</li>
+  <li><code class="language-plaintext highlighter-rouge">advanced</code> Additional options, e.g evalue, gapopen, gapextend etc</li>
+</ul>
+
+<h3 id="responses">Responses</h3>
+
+<p>Successful submission results in a 303 HTTP status code.</p>
+
+<ul>
+  <li>Code 303</li>
+  <li><code class="language-plaintext highlighter-rouge">Location</code> header is a link to the submitted job ID</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<ol>
+  <li>
+    <p>To query a single database using blastn:</p>
+
+    <p>curl -v -X POST -Fsequence=ATGTTACCACCAACTATTAGAATTTCAG -Fmethod=blastn -Fdatabases[]=3c0a5bc06f2596698f62c7ce87aeb62a $BASEURL</p>
+  </li>
+  <li>
+    <p>To query multiple databases, add extra -Fdatabases[] arguments, e.g.</p>
+
+    <p>curl -v -X POST -Fsequence=ATGTTACCACCAACTATTAGAATTTCAG -Fmethod=blastn -Fdatabases[]=3c0a5bc06f2596698f62c7ce87aeb62a -Fdatabases[]=2f8c0e19d8d5b8ab225962d7284a6cbf $BASEURL</p>
+  </li>
+  <li>
+    <p>Getting location header - you need this in order to retrieve the results</p>
+
+    <p>jobUrl=$(curl -v -X POST -Fsequence=ATGTTACCACCAACTATTAGAATTTCAG -Fmethod=blastn -Fdatabases[]=3c0a5bc06f2596698f62c7ce87aeb62a --write-out '%{redirect_url}' $BASEURL)</p>
+  </li>
+  <li>
+    <p>Altering the evalue threshold and adding a gap penalty:</p>
+
+    <p>curl -v -X POST -Fsequence=ATGTTACCACCAACTATTAGAATTTCAG -Fmethod=blastn -Fdatabases[]=3c0a5bc06f2596698f62c7ce87aeb62a  -Fadvanced="-evalue 1.0e-8 -gapopen 1 -gapextend 1" $BASEURL</p>
+  </li>
+</ol>
+
+<h2 id="retrieving-results">Retrieving results</h2>
+
+<p>GET: /{jobId}.json</p>
+
+<h3 id="path-variables">Path variables</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">jobId</code> The Job Id</li>
+</ul>
+
+<h3 id="responses-1">Responses</h3>
+
+<ul>
+  <li>Code: 202 The Blast job is still running</li>
+  <li>Code: 200 The job is complete, results are in JSON format</li>
+</ul>
+
+<h3 id="examples-1">Examples</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -o myresults.json $BASEURL/069b56c8-25bd-451e-b117-dc996a1aed24.json
+</code></pre></div></div>
+
+<h2 id="results-in-other-formats">Results in other formats</h2>
+
+<p>GET: /download/{jobId}.{format}</p>
+
+<h3 id="path-variables-1">Path variables</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">jobId</code> the Job ID retrieved after submission</li>
+  <li><code class="language-plaintext highlighter-rouge">format</code> is one of <code class="language-plaintext highlighter-rouge">xml</code>, <code class="language-plaintext highlighter-rouge">std_tsv</code> or <code class="language-plaintext highlighter-rouge">full_tsv</code></li>
+</ul>
+
+<h3 id="examples-2">Examples</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -o myresults.xml $BASEURL/download/069b56c8-25bd-451e-b117-dc996a1aed24.xml
+curl -o myresults.tsv $BASEURL/download/069b56c8-25bd-451e-b117-dc996a1aed24.std_tsv
+curl -o myresults-full.tsv $BASEURL/download/069b56c8-25bd-451e-b117-dc996a1aed24.full_tsv
+</code></pre></div></div>
+
+<h2 id="downloading-hits">Downloading hits</h2>
+
+<p>Download hits in FASTA format.</p>
+
+<p>POST:  /get_sequence</p>
+
+<h3 id="form-parameters-1">Form parameters</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">sequence_ids</code> A comma-separated list of sequence IDs</li>
+  <li><code class="language-plaintext highlighter-rouge">database_ids</code> A comma-separated list of database Ids</li>
+</ul>
+
+<h3 id="examples-3">Examples</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X POST -Fsequence_ids=SPAC1002.01,SPAC1002.02 -Fdatabase_ids=2f8c0e19d8d5b8ab225962d7284a6cbf  $BASEURL/get_sequence
+</code></pre></div></div>

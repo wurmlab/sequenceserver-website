@@ -2,8 +2,8 @@
 https://sequenceserver.com/404.html
 https://sequenceserver.com/doc/api.html
 https://sequenceserver.com/paper/blast-interface-design-and-implementation.html
-https://sequenceserver.com/doc/
 https://sequenceserver.com/paper/
+https://sequenceserver.com/doc/
 https://sequenceserver.com/
 https://sequenceserver.com/progress-on-BLAST-interface.html
 https://sequenceserver.com/sitemap.txt
