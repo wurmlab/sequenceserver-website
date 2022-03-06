@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="SequenceServer: Powerful software for running BLAST and visualizing results" />
 <script type="application/ld+json">
-{"@type":"WebSite","headline":"SequenceServer: Powerful software for running BLAST and visualizing results","description":"SequenceServer helps you perform and interpret genomic comparisons using NCBI BLAST on unpublished datasets. Accelerate your analysis: It includes powerful visualization and flexible output formats so you can focus on the science.","url":"https://sequenceserver.com/","name":"SequenceServer","@context":"https://schema.org"}</script>
+{"url":"https://sequenceserver.com/","name":"SequenceServer","description":"SequenceServer helps you perform and interpret genomic comparisons using NCBI BLAST on unpublished datasets. Accelerate your analysis: It includes powerful visualization and flexible output formats so you can focus on the science.","headline":"SequenceServer: Powerful software for running BLAST and visualizing results","@type":"WebSite","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
@@ -108,22 +108,27 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5 stats-banner justify-content-center" role="banner">
     <div class="">
         <div>
-            <p><a href="/#users"><i class="fa fa-quote-left" aria-hidden="true"></i> 130+ citations</a></p>
+            <p><a href="/#users"><i class="fa fa-quote-left" aria-hidden="true"></i> >150 citations</a></p>
         </div>
     </div>
     <div class="col d-flex align-items-start">
         <div>
-            <p><i class="fa fa-users" aria-hidden="true"></i> 10,000+ users</p>
+            <p><i class="fa fa-users" aria-hidden="true"></i> >20,000 users</p>
         </div>
     </div>
     <div class="col d-flex align-items-start">
         <div>
-            <p><a href="https://rubygems.org/gems/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-download" aria-hidden="true"></i> 90,000+ downloads</a></p>
+            <p><a href="https://rubygems.org/gems/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-download" aria-hidden="true"></i> >100,000 downloads</a></p>
         </div>
     </div>
     <div class="col d-flex align-items-start">
         <div>
-            <p><a href="https://github.com/wurmlab/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-star" aria-hidden="true"></i> 217 stars on GitHub</a></p>
+            <p><a href="https://github.com/wurmlab/sequenceserver" target="_blank" rel="noreferrer"><i class="fa fa-star" aria-hidden="true"></i> >225 GitHub stars</a></p>
+        </div>
+    </div>
+    <div class="col d-flex align-items-start">
+        <div>
+            <p><i class="fa fa-calendar" aria-hidden="true"></i> Empowering biologists since 2011</p>
         </div>
     </div>
 </div>
@@ -431,8 +436,9 @@
             your community. <strong>Focus on the biology and getting things done.</strong>
             SequenceServer is
             <a href="/#license">free</a> and
-            <a href="https://github.com/wurmlab/sequenceserver">open source</a>.
-          </p>
+            <a href="https://github.com/wurmlab/sequenceserver">open source</a> &amp; you can run it on your personal computer or server. </p>
+	  <p onMouseOver="this.style.color='#c74f14'" onMouseOut="this.style.color='#000000'">Our SequenceServer Cloud service enables your team to run <a href="/cloud">BLAST analyses in the cloud</a> and provides a <a href="/blog/point-and-click-blast-server-configuration/">graphical interface for easy configuration and access management</a>.
+</p>
 
           <p>
             SequenceServer is extensively used in private and public sector labs for cloning, comparative genomics, gene curation, design of diagnostic markers and many other applications.  Our software has helped research on humans, viruses, bacteria, agricultural plants and animals, and dozens of emerging model organisms. 
@@ -550,6 +556,10 @@
               href="docker.com">Docker</a> and use it to run SequenceServer
               whether on Linux, on Mac, or on Windows.
             </li>
+	    <li>
+              <strong>Alternatively</strong>, use our <a href="/cloud">cloud BLAST service</a>: forget about the command-line and servers and security; use a point-and-click interface to set up everything in a secure manner accessible worldwide.
+            </li>
+	    
           </ul>
           <div class="page-header">
             <h3>
@@ -597,51 +607,51 @@
       <div class="col-md-5" >
         <a href="img/overview/search.png">
           <img class="thumbnail"
-          src="img/overview/search.png" style="width:100%; height: auto" alt="Screenshot of search interface."/>
+          src="img/overview/search.png" style="width:100%; height: auto" alt="BLAST search interface."/>
         </a>
         <p class="text-center">
-          Screenshot: Search interface
+          Screenshot: BLAST search submission web interface
         </p>
         <br>
         <a href="img/overview/result.png">
           <img class="thumbnail"
-          src="img/overview/result.png" style="width:100%; height: auto" alt="Screenshot of result interface."/>
+          src="img/overview/result.png" style="width:100%; height: auto" alt="BLAST analysis result interface."/>
         </a>
         <p class="text-center">
-          Screenshot: Result interface
+          Screenshot: BLAST result overview
         </p>
         <br>
-        <a href="img/overview/circos.png">
+        <a href="img/visualization/circos-plot-of-blast-hits-sequenceserver-focus.png">
           <img class="thumbnail"
-          src="img/overview/circos.png" style="width:100%; height: auto" alt="Screenshot of circos visualisation."/>
+          src="img/visualization/circos-plot-of-blast-hits-sequenceserver-focus.png" style="width:100%; height: auto" alt="Circos visualisation of BLAST hits."/>
         </a>
         <p class="text-center">
-          Screenshot: Circos-style visualisation showing conserved synteny and rearrangement between genomes of two species.
+          Screenshot: Circos-style visualisation of BLAST queries and hits.
         </p>
         <br>
         <a href="img/overview/length-distribution.png">
           <img class="thumbnail"
           src="img/overview/length-distribution.png"
-          style="width:100%; height: auto" alt="Screenshot of length distribution visualisation."/>
+          style="width:100%; height: auto" alt="BLAST hit length distribution visualisation."/>
         </a>
         <p class="text-center">
-          Screenshot: Length distribution of hits showing that the query (a predicted gene product) is longer compared to similar database sequences.
+          Screenshot: Length distribution of BLAST hits showing that the query (a predicted gene product) is longer than database hits sequences.
         </p>
         <br>
         <a href="img/overview/Kablammo-NC_014672_1-tig00002561.png">
           <img class="thumbnail"
-          src="img/overview/Kablammo-NC_014672_1-tig00002561.png" style="width:100%; height: auto" alt="Screenshot of Kablammo visualisation"/>
+          src="img/overview/Kablammo-NC_014672_1-tig00002561.png" style="width:100%; height: auto" alt="BLAST pairwise alignment Kablammo visualisation"/>
         </a>
         <p class="text-center">
-          Screenshot: Kablammo visualisation showing a mis-assembled genomic sequence.
+          Screenshot: Pairwise BLAST alignment (Kablammo) visualisation showing a translocated sequence.
         </p>
         <br>
         <a href="img/overview/setup.png">
           <img class="thumbnail"
-          src="img/overview/setup.png" style="width:100%; height: auto" alt="Setup process."/>
+          src="img/overview/setup.png" style="width:100%; height: auto" alt="BLAST server setup process."/>
         </a>
         <p class="text-center">
-          Screenshot: Setup process
+          Screenshot: BLAST server setup process
         </p>
       </div>
     </div>
