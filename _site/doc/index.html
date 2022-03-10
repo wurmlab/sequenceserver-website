@@ -238,6 +238,11 @@
           </a>
         </li>
         <li role="presentation">
+          <a href="#job-data">
+            Where is job data stored?
+          </a>
+        </li>
+        <li role="presentation">
           <a href="#issues">
             Known issues and limitations
           </a>
@@ -1213,6 +1218,22 @@ qsub <span class="nt">-sync</span> y <span class="nt">-b</span> y <span class="n
         CSS). SequenceServer's interactive command-line mode, activated as
         <code> sequenceserver -i</code> lets you access all server-side objects
         and methods, call them and inspect their output in Ruby.
+      </p>
+    </section>
+
+    <!-- Job data ========================================================= -->
+    <section id="job-data">
+      <div class="page-header">
+        <h2>
+          Where is job data stored?
+        </h2>
+      </div>
+      <p>
+        SequenceServer stores job data in <code>~/.sequenceserver</code>
+        folder. Each job gets its own directory here and has a
+        <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a>
+        for name, which is also the job id that is used internally to look up
+        job status, etc.
       </p>
     </section>
 
