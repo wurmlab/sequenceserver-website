@@ -34,13 +34,13 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
           </a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" href="#taxonomy">
-            Getting taxonomy data from BLAST
+          <a class="nav-link" href="#advanced-params">
+            Advanced BLAST options
           </a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" href="#advanced-params">
-            Advanced BLAST options
+          <a class="nav-link" href="#taxonomy">
+            Taxonomy of matching sequences
           </a>
         </li>
         <li class="nav-item" role="presentation">
@@ -555,42 +555,6 @@ ncbi-blast-dbs nt nr
       </p>
     </section>
 
-    <!-- Taxonomy data -->
-    <section id="taxonomy">
-      <div class="page-header">
-        <h2>
-          Taxonomy of matching sequences
-        </h2>
-      </div>
-      <p>
-        SequenceServer automatically includes scientific name of the species in
-        its HTML report. All taxonomy data returned by BLAST is provided in the
-        "Full tabular report" download option. For this to work, BLAST database
-        files should contain taxonomy id of the sequences and you must have
-        downloaded NCBI "taxdb".
-      </p>
-
-      <p>
-        See "Creating BLAST databases" section for how to include taxonomy
-        information in BLASTDB files. If you are using BLAST databases
-        downloaded from NCBI then you don't need to worry about this -
-        taxonomy information is included in the database files.
-      </p>
-
-      <p>
-        To download NCBI taxdb, run:
-      </p>
-
-<pre>
-<code>sequenceserver --download-taxdb</code>
-</pre>
-
-      <p>
-        The above command downloads taxdb files to <code>~/.sequenceserver</code>,
-        where SequenceServer keeps a few other files as well.
-      </p>
-    </section>
-
     <!-- Advanced BLAST options -->
     <section id="advanced-params">
       <div class="page-header">
@@ -649,6 +613,42 @@ ncbi-blast-dbs nt nr
 {% endhighlight %}
 
       <img src="/img/presets.png" />
+    </section>
+
+    <!-- Taxonomy data -->
+    <section id="taxonomy">
+      <div class="page-header">
+        <h2>
+          Taxonomy of matching sequences
+        </h2>
+      </div>
+      <p>
+        SequenceServer automatically includes scientific name of the species in
+        its HTML report. All taxonomy data returned by BLAST is provided in the
+        "Full tabular report" download option. For this to work, BLAST database
+        files should contain taxonomy id of the sequences and you must have
+        downloaded NCBI "taxdb".
+      </p>
+
+      <p>
+        See "Creating BLAST databases" section for how to include taxonomy
+        information in BLASTDB files. If you are using BLAST databases
+        downloaded from NCBI then you don't need to worry about this -
+        taxonomy information is included in the database files.
+      </p>
+
+      <p>
+        To download NCBI taxdb, run:
+      </p>
+
+<pre>
+<code>sequenceserver --download-taxdb</code>
+</pre>
+
+      <p>
+        The above command downloads taxdb files to <code>~/.sequenceserver</code>,
+        where SequenceServer keeps a few other files as well.
+      </p>
     </section>
 
     <!-- JBrowse -->
