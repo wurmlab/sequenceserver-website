@@ -632,9 +632,22 @@ ncbi-blast-dbs nt nr
       </p>
       <p>
         Starting with version 2.1 of SequenceServer, it is possible to define
-        multiple parameter "presets" that are then automatically available in
-        the search form.
+        multiple advanced parameter "presets" in the config file for each BLAST
+        algorithm that are then automatically made available in the search form.
+        Here's an example:
       </p>
+
+{% highlight yaml %}
+:options:
+  :blastn:
+    :default:
+    - "-task blastn"
+    - "-evalue 1e-5"
+    :short-seq:
+    - "-task blastn-short"
+    - "-evalue 1e-1"
+{% endhighlight %}
+
       <img src="/img/presets.png" />
     </section>
 
