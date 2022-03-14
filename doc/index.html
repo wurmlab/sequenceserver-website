@@ -44,13 +44,13 @@ keywords: BLAST on hpc, docker blast, graphical interface, blast on mac, local N
           </a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" href="#jbrowse">
-            Integrating with JBrowse
+          <a class="nav-link" href="#plugin">
+            Adding links to search hits
           </a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" href="#plugin">
-            Adding links to search hits
+          <a class="nav-link" href="#jbrowse">
+            Integrating with JBrowse
           </a>
         </li>
         <li class="nav-item" role="presentation">
@@ -651,22 +651,6 @@ ncbi-blast-dbs nt nr
       </p>
     </section>
 
-    <!-- JBrowse -->
-    <section id="jbrowse">
-      <div class="page-header">
-        <h2>
-          Integrating with JBrowse
-        </h2>
-      </div>
-      <p>
-        JBrowse's website has an excellent tutorial in this regard:
-        <a href="https://jbrowse.org/docs/faq.html#how-can-i-link-blast-results-to-jbrowse">
-          How can I link BLAST results to JBrowse</a>. The tutorial makes use
-        of SequenceServer's plugin architecture which is described briefly in
-        the next section.
-      </p>
-    </section>
-
     <!-- Plugin -->
     <section id="plugin">
       <div class="page-header">
@@ -710,6 +694,22 @@ ncbi-blast-dbs nt nr
       <p>
         URL parameters should be encoded. It replaces whitespace and other relevant chars in the string with % encoding
         followed in URLs.
+      </p>
+    </section>
+
+    <!-- JBrowse -->
+    <section id="jbrowse">
+      <div class="page-header">
+        <h2>
+          Integrating with JBrowse
+        </h2>
+      </div>
+      <p>
+        JBrowse's website has an excellent tutorial in this regard:
+        <a href="https://jbrowse.org/docs/faq.html#how-can-i-link-blast-results-to-jbrowse">
+          How can I link BLAST results to JBrowse</a>. The tutorial makes use
+        of SequenceServer's plugin architecture which is described briefly in
+        the previous section.
       </p>
     </section>
 
