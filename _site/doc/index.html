@@ -163,6 +163,11 @@
           </a>
         </li>
         <li class="nav-item" role="presentation">
+          <a class="nav-link" href="#tree-widget">
+            Tree widget for databases
+          </a>
+        </li>
+        <li class="nav-item" role="presentation">
           <a class="nav-link" href="#advanced-params">
             Advanced BLAST options
           </a>
@@ -678,6 +683,40 @@ ncbi-blast-dbs nt nr</code></pre></figure>
         links to NCBI page corresponding to the hit sequences from the HTML
         report.
       </p>
+    </section>
+
+    <!-- Tree widget -->
+    <section id="tree-widget">
+      <div class="page-header">
+        <h2>
+          Tree widget for databases
+        </h2>
+      </div>
+      <p>
+        If you have a long list of databases, you can use the experimental 'tree
+        widget' for displaying databases that was contributed by
+        <a href="https://github.com/wurmlab/sequenceserver/issues/520">Björn Hammesfahr of KWS SAAT SE & Co. KGaA</a>.
+      </p>
+      <p>
+        To enable it, change the <code>:database_widget:</code> key in
+        configuration file to <code>tree</code>.
+      </p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">:databases_widget: tree</span></code></pre></figure>
+
+      <p>
+        This folder mimics the structure of the databases directory and respects
+        symlinks. You can find example directly structure and screenshot in the
+        above mentioned link.
+      </p>
+
+      <p>
+        As a further example, the <a
+        href="https://github.com/wurmlab/sequenceserver/tree/master/spec/database/v5/sample">example
+        database dir include in SequenceServer code base</a>looks as follows
+        with the tree data widget:
+      </p>
+      <img src="/img/tree-widget.png"/>
     </section>
 
     <!-- Advanced BLAST options -->
