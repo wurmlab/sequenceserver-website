@@ -6,21 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Sequence Search | SequenceServer</title>
+<title>Old SequenceServer news 2011-2016 | SequenceServer</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Sequence Search" />
+<meta property="og:title" content="Old SequenceServer news 2011-2016" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Sequence Search" />
-<meta property="og:description" content="Sequence Search" />
-<link rel="canonical" href="https://sequenceserver.com/blog/sequence-search/" />
-<meta property="og:url" content="https://sequenceserver.com/blog/sequence-search/" />
+<meta name="description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
+<meta property="og:description" content="Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science." />
+<link rel="canonical" href="https://sequenceserver.com/oldnews.html" />
+<meta property="og:url" content="https://sequenceserver.com/oldnews.html" />
 <meta property="og:site_name" content="SequenceServer" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-24T23:03:32+01:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Sequence Search" />
+<meta property="twitter:title" content="Old SequenceServer news 2011-2016" />
 <script type="application/ld+json">
-{"datePublished":"2021-07-24T23:03:32+01:00","headline":"Sequence Search","url":"https://sequenceserver.com/blog/sequence-search/","mainEntityOfPage":{"@type":"WebPage","@id":"https://sequenceserver.com/blog/sequence-search/"},"description":"Sequence Search","@type":"BlogPosting","dateModified":"2021-07-24T23:03:32+01:00","@context":"https://schema.org"}</script>
+{"headline":"Old SequenceServer news 2011-2016","url":"https://sequenceserver.com/oldnews.html","description":"Use SequenceServer to pragmatically perform and interpret genomic comparisons using NCBI BLAST. SequenceServer accelerates your analyses so you can focus on the science.","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="author" content="Anurag Priyam">
   <meta name="author" content="Yannick Wurm">
@@ -163,58 +161,149 @@
     </div>
 </div>
 
-    <h1 id="sequence-search">Sequence Search</h1>
+    <h1>Old news from 2011 to 2016</h1>
 
-<p>Reasons for performing sequence searches include:</p>
-
-<ul>
-  <li>wanting to know if the Sanger sequence of the gene you cloned indeed matches the sequence you were expecting,</li>
-  <li>checking whether targeted CRISPR mutagenesis was successful,</li>
-  <li>identifying the sequence of a candidate gene in a newly sequenced genome,</li>
-  <li>finding out the potential function of a gene,</li>
-  <li>finding paralogs or orthologs of a gene to perform multiple sequence alignment and identify which parts of the sequence are most conserved,</li>
-  <li>searching whether oligonucleotide primer sequences are likely to amplify non-target regions of the genome.</li>
-</ul>
-
-<h2 id="where-to-perform-blast-sequence-searches">Where to perform BLAST sequence searches</h2>
-
-<p>The most widely used online portal for sequence searches is <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s BLAST search</a>. It’s a handy go-to place given that NCBI house the vast majority of published nucleotide and protein sequences.</p>
-
-<p>However, other contexts for BLAST sequence search also exist. These include:
-The <a href="https://www.ebi.ac.uk/ena/browser/sequence-search">European Nucleotide Archive</a>, which hosts a mirror of NCBI’s data,
-<a href="https://www.uniprot.org/blast/">UniProt</a>, who have subsets of the protein sequence data that meet specific quality standards,
-and domain-specific websites such as <a href="http://flybase.org">Flybase</a> or the <a href="https://antgenomes.org">ant genome database</a>.</p>
-
-<p>Challenges with such major repositories include that they get a lot of demand. Thus your sequence search can be “queued” for a while until computing capacity becomes available. Furthermore, public websites for sequence search typically have size restrictions on query sequences. Finally, they do not enable you to search against unpublished sequences.</p>
-
-<p>Most sequence search types can also be performed on a local computing cluster, as is found in many universities, research centers and core facilities and institutes.</p>
-
-<p>You can also <a href="/blog/cloud-blast">perform BLAST analyses in the cloud</a>.</p>
-
-<p>Our SequenceServer software provides a pragmatic alternative for <a href="https://sequenceserver.com">performing local BLAST sequence searches</a> on your computer, including on unpublished data. It includes many <a href="../visualizing_blast_results/">visualization approaches</a>. You can install it and run it locally on a Mac or Linux (its free and has been cited more than 130 times). Alternatively,  you can use <a href="https://www.sequenceserver.com/cloud/">SequenceServer Cloud</a>. Having a SequenceServer Cloud instance enables you (or your team) to have a centrally accessed sequence search repository. Its graphical sequence search interface is fast, accessible from any web browser (including from Windows), takes no space on your computer, enables you to harness the power of a high performance computing cluster.</p>
-
-<div class="container">
-  <div class="row justify-content-center">
- 	<div class="alert alert-info" style="max-width:75%">
-	  <p>SequenceServer Cloud makes it easy to perform sequence search results and to interpret them. For this, it leverages cloud computing, [publication-ready graphics that facilitate interpretation](/blog/visualizing_blast_results), and a powerful [graphical interface for configuring BLAST databases](/blog/point-and-click-blast-server-configuration). <a href="https://sequenceserver.com/cloud/">[Try it out]</a></p>
-	  <p style="text-align:center"><a href="https://sequenceserver.com/cloud/"><img src="/img/logos/SequenceServer_logo.png" alt="Sequence Search with SequenceServer" width="200pt" /></a></p>
-    </div>
-  </div>
-</div>
-
-<h2 id="the-broad-diversity-of-sequence-search-algorithms">The broad diversity of sequence search algorithms</h2>
-
-<p>BLAST, whether used at NCBI, as local installation, or <a href="https://www.sequenceserver.com/cloud/">online using a cloud service</a> is the mainly used sequence search algorithm, with <strong>more than 100,000 citations</strong>.</p>
-
-<p>BLAST is great for searching large databases with “small” query sequences. Today’s BLAST algorithm is far more computationally efficient than those from twenty years ago. However, BLAST isn’t necessarily the most appropriate sequence search algorithm for every job. Other algorithms include BLAT, USearch, minimap. The following article reviews the history of sequence search algorithms and the tradeoffs among search algorithms:</p>
-
-<blockquote>
-  <p><a href="https://doi.org/10.1093/bioinformatics/btz272"><strong>Evolution of biosequence search algorithms: a brief survey</strong></a><br />
-<em>Gregory Kucherov</em>. Bioinformatics (2019), 35:3547–3552<br />
-<em>Although modern high-throughput biomolecular technologies produce various types of data, biosequence data remain at the core of bioinformatic analyses. However, computational techniques for dealing with this data evolved dramatically.
-Results
-In this bird’s-eye review, we overview the evolution of main algorithmic techniques for comparing and searching biological sequences. We highlight key algorithmic ideas emerged in response to several interconnected factors: shifts of biological analytical paradigm, advent of new sequencing technologies and a substantial increase in size of the available data. We discuss the expansion of alignment-free techniques coming to replace alignment-based algorithms in large-scale analyses. We further emphasize recently emerged and growing applications of sketching methods which support comparison of massive datasets, such as metagenomics samples. Finally, we focus on the transition to population genomics and outline associated algorithmic challenges.</em></p>
-</blockquote>
+<p>
+    <strong> 2016-11 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.9">1.0.9</a>
+    - important bug fix.
+</p>
+<p>
+    <strong> 2016-04 </strong>
+    <a href="https://github.com/aniarya82">Hiten Chowdhary</a> joins the
+    team to extend and improve visualisation of BLAST results in
+    SequenceServer as part of
+    <a href="https://summerofcode.withgoogle.com/organizations/6212058194378752/">
+        Google Summer of Code (GSoC) with Open Genome Informatics</a>.
+</p>
+<p>
+    <strong> 2016-03 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.8">1.0.8</a>
+    - bug fixes and improved Apache integration.
+</p>
+<p>
+    <strong> 2016-03 </strong>
+    <a href="/#quick-setup"> One-line setup with Docker </a> - only need
+    path to database sequences.
+</p>
+<p>
+    <strong> 2016-03 </strong> Expanded, updated, and improved
+    <a href="/doc/"> documentation </a> to cover common scenarios.
+</p>
+<p>
+    <strong> 2016-02 </strong> SequenceServer
+    <a href="/#users"> cited in over 20 publications </a> and
+    <a href="https://rubygems.org/gems/sequenceserver">
+        downloaded over 34,000 times from RubyGems</a>.
+</p>
+<p>
+    <strong> 2015-12/2016-02 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases">1.0.6 &amp; 1.0.7</a>
+    <!-- - link to bioRxiv <a href="http://biorxiv.org/content/early/2015/11/27/033142">preprint</a>. -->
+</p>
+<p>
+    <strong> 2015-11 </strong> bioRxiv preprint -
+    <a href="http://biorxiv.org/content/early/2015/11/27/033142">
+        Sequenceserver: a modern graphical user interface for custom BLAST
+        databases</a>.
+</p>
+<p>
+    <strong> 2015-11 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.5">1.0.5</a>
+    - fixes issues on Ruby 1.8.7, minor enhancement.
+</p>
+<p>
+    <strong> 2015-05 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.4">1.0.4</a>
+    - taxonomy data in tabular output, other fixes and enhancements to the
+    HTML report.
+</p>
+<p>
+    <strong> 2015-05 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.3">1.0.3</a>
+    - critical bug fix, ability to embed in iframe.
+</p>
+<p>
+    <strong> 2015-03 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.2">1.0.2</a>
+    - installation and UI enhancements.
+</p>
+<p>
+    <strong> 2015-03 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.1">1.0.1</a>
+    - minor enhancement.
+</p>
+<p>
+    <strong> 2015-03 </strong> SequenceServer
+    <a href="https://github.com/wurmlab/sequenceserver/releases/tag/1.0.0">1.0.0</a>
+    - completely new user interface, assistive setup and tons of new
+    features.
+</p>
+<p>
+    <strong> 2015-02 </strong> SequenceServer 1.0.0 pre-release. Entirely
+    new user interface and tons of new features.
+</p>
+<p>
+    <strong> 2013-2014 </strong> Development ongoing (check the
+    <a href="https://github.com/wurmlab/sequenceserver/commits/master">
+        github log
+    </a>
+    or
+    <a href="https://groups.google.com/forum/?fromgroups#!forum/sequenceserver">
+        mailing list </a>); contributors, contributions &amp;
+    <a href="/#users">citations</a> always welcome!
+</p>
+<p>
+    <strong> 2012-12 </strong> Learn more or get help on
+    <a href="https://groups.google.com/forum/?fromgroups#!forum/sequenceserver">
+        SequenceServer's Google Group
+    </a>
+    discussion forum.
+</p>
+<p>
+    <strong> 2012-08 </strong> SequenceServer cited: Elphick MR (2012)
+    <a href="http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0044492">
+        The Protein Precursors of Peptides That Affect the Mechanics of
+        Connective Tissue and/or Muscle in the Echinoderm Apostichopus
+        japonicus.
+    </a>
+    PLoS ONE.
+</p>
+<p>
+    <strong> 2012-06 </strong> SequenceServer 0.8.0 with loads of interface
+    improvements released: automagic BLAST method selection, index for
+    multi-query BLAST, sequence type feedback, to name a few.
+</p>
+<p>
+    <strong> 2011-12 </strong> SequenceServer needs your help. Contribute to
+    a useful real world Bioinformatics project by
+    <a href="https://github.com/wurmlab/sequenceserver/issues">
+        squashing some bugs or improving features </a>. Great opportunity for CS or Webdesign students
+    interested in
+    Bioinformatics or Usability. In particular, our
+    <a href="http://getbootstrap.com/"> twitter bootstrap </a> CSS interface
+    has potential. Please get in touch.
+</p>
+<p>
+    <strong> Ongoing </strong> Bugs being resolved &amp; improvements being
+    made. Check the
+    <a href="https://github.com/wurmlab/sequenceserver"> GitHub page </a>
+    for recent activity.
+</p>
+<p><strong> 2011-06-09 </strong> SequenceServer is now beta1.</p>
+<p>
+    <strong> 2011-06-01 </strong> SequenceServer can use Rack &amp;
+    Passenger to integrate existing Apache web servers.
+</p>
+<p>
+    <strong> 2011-02-01 </strong> SequenceServer was deployed on the
+    <a href="https://antgenomes.org"> Fourmidable ant genome database </a>
+    simultaneously with the publication of three
+    <a href="http://www.pnas.org/cgi/doi/10.1073/pnas.1009690108" title="fire
+          ant genome">
+        ant genomes.
+    </a>
+</p>
 
   </div>
 

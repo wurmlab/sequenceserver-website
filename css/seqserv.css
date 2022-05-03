@@ -8,8 +8,6 @@ body {
 }
 
 section {
-  padding-top: 50px;
-  margin-top: -50px;
   /* add margin when anchor tag scrolls to section  -mh */
   scroll-margin-top: 30px;
 }
@@ -145,10 +143,10 @@ a:hover {
   display: block;
   width: 100%;
 }
-
+/*
 .sidebar a {
   padding: 2px 0 2px 4px !important;
-}
+}*/
 
 @media (min-width: 992px) {
   /* MacBook Pro etc. */
